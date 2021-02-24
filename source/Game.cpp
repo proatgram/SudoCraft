@@ -5,6 +5,7 @@
 #include "Tool.h"
 #include "Weapon.h"
 #include "Character.h"
+#include "Inventory.h"
 
 /*
 class Shovel: public Tool {
