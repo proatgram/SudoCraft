@@ -4,7 +4,7 @@ At this moment in time it is supposed to be a 2D dungeon crawler Minecrfat type 
 
 # Compiling
 To compile the current source files, run g++ -Wall -o EXECUTABLE_FILE_NAME_GOES_HERE SudoCraft/source/Game.cpp
-Where EXECUTABLE_FILE_NAME is the output of the compiler.
+Where EXECUTABLE_FILE_NAME_GOES_HERE is the output of the compiler.
 
 # Running
 In the command line, goto the directory that the output of the comiler is stored and the run ./Game
