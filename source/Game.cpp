@@ -8,6 +8,9 @@
 #include "Character.h"
 #include "Inventory.h"
 
+// Defines Inventory  methods:
+
+
 /*
 class Shovel: public Tool {
 public:
@@ -66,7 +69,26 @@ void setupItems() {
        woodenSword = nullptr;       
 }
 */
+/*
+std::vector<int>* vectorTest() {
+  //int g2*; 
+  std::vector<int> *g2 = new std::vector<int>();
+  g2->push_back(1);
+  //g2.push_back(2);
+  //printf("Pointer to g2: %d", *g2[1]);
+  return g2;
+}
+int main() {
+  //function();ls
 
+  std::vector<int>* g2 = vectorTest();
+  printf("pointer g2 = 0x%x\nValue of vector g2 slot 1: ", g2);
+  g2->push_back(56);
+  printf(" %d\n",g2->at(0));
+  delete g2;
+  g2 = nullptr;
+}
+ */
 int main() {
 //	setupItems();
 	Character Azdelth(std::string("Azdelth"), 0, 8647);
