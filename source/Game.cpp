@@ -190,7 +190,7 @@ int main() {
  */
 int main() {
 //	setupItems();
-  /*
+  
 	Character Azdelth(std::string("Azdelth"), 0, 8647);
 	Weapon woodenSword(std::string("Wooden Sword"), 1, 3, 2, 100);
 	Weapon primitiveClub(std::string("Primitive Club"), 2, 3, 2, 100);
@@ -203,5 +203,5 @@ int main() {
 	printWeaponInfo(primitiveClub);
 	printToolInfo(woodenShovel);
 	printCharacterInfo(Azdelth);
-	*/
+	
 }

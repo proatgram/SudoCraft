@@ -6,7 +6,13 @@
 
 class Character {
 public:
+  Character(std::string name, int levels, int characterId) : 
+  m_name(name),
+  m_level(levels),
+  m_characterID(characterId)
+  {
 
+  }
 	virtual ~Character() = default;
 	int getCharacterID() const;
 	const std::string& getCharacterName() const;
