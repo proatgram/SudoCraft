@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <string>
 
 #ifndef __CHARACTER_H__

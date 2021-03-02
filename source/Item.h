@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <string>
 
 #ifndef __ITEM_H__
