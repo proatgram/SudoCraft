@@ -1,8 +1,11 @@
-//The Includes for the current logic.
+//Includes from the standered c librarys.
 #include <cstdio>
 #include <cstdint>
 #include <string>
 #include <algorithm>
+
+//Includes for my own .h files.
+
 #include "Item.h"
 #include "Tool.h"
 #include "Weapon.h"
