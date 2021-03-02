@@ -16,17 +16,16 @@ public:
 	
     }
 
-	void setRange(const int range)
-		
-	{
-		m_range = range;
-	}
-	void setDurability(int durability) {
-		m_durability = durability;
-	}
-	int getDamage() const {return m_damage;}
-	int getRange() const {return m_range;}
-	int getDurability() const {return m_durability;}
+	void setRange(const int range);
+
+	void setDurability(int durability);
+
+	int getDamage() const;
+
+	int getRange() const;
+
+	int getDurability() const;
+
 private:    	   
 	int m_damage;
 	int m_range;

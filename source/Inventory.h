@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "Character.h"
 
 #ifndef __INVENTORY_H__
@@ -12,12 +13,27 @@ public:
   Inventory(uint8_t capacity) : 
   m_capacity(capacity)
   {
+ 
+  }
+  Inventory(uint8_t capacity, const std::vector<Item*>& items) : 
+  m_items(items)
+  {
 
   }
-     
+
+  //virtual ~Inventory = default;
+
+  bool addItem(Item* item);
+
+  const std::vector<Item*> getItems();
+
+  Item* getItem(int index);
+
+  void removeItem(Item* item);
 
 protected:
-  uint8_t m_capacity
+  uint8_t m_capacity;
+  std::vector<Item*> m_items;
 };
 
 #endif

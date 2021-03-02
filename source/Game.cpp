@@ -1,7 +1,9 @@
 //The Includes for the current logic.
 #include <cstdio>
-#include <SDL/SDL.h>
+#include <cstdint>
+//#include <SDL/SDL.h>
 #include <string>
+#include <algorithm>
 #include "Item.h"
 #include "Tool.h"
 #include "Weapon.h"
@@ -9,7 +11,104 @@
 #include "Inventory.h"
 
 // Defines Inventory  methods:
+void Inventory::removeItem(Item *item) {
+  std::vector<Item*>::iterator it = std::find(m_items.begin(), m_items.end(), item);
+  if(it != m_items.end()) {
+    m_items.erase(it);
+  }
+}
 
+bool Inventory::addItem(Item *item) {
+  if (m_items.size() >= m_capacity) {
+    return false;
+  }
+  else {
+    m_items.push_back(item);
+    return true;
+  }
+}
+
+const std::vector<Item*> Inventory::getItems() {
+  for (int i = 0; i != m_items.size(); i++) {
+  }
+  
+}
+
+Item* Inventory::getItem(int index) {
+  if (index >= m_capacity) {
+    
+  }
+  else {
+    return m_items[index];
+  }
+  
+}
+
+// Declares the Item classes methods: 
+
+int Item::getId() const {
+  return m_id;
+}
+
+const std::string& Item::getName() const {
+  return m_name;
+}
+
+// Declares the Weapon classes methods:
+
+void Weapon::setRange(const int range) {
+  m_range = range;
+}
+
+void Weapon::setDurability(int durability) {
+  m_durability = durability;
+}
+
+int Weapon::getDamage() const {
+  return m_damage;
+}
+
+int Weapon::getRange() const {
+  return m_range;
+}
+
+int Weapon::getDurability() const {
+  return m_durability;
+}
+
+// Declares the Tool classes methods: 
+
+void Tool::setDurability(int durability) {
+  m_durability = durability;
+}
+
+void Tool::setRange(const int range) {
+  m_range = range;
+}
+
+int Tool::getDurability() const {
+  return m_durability;
+}
+
+int Tool::getRange() const {
+  return m_range;
+}
+// Declares the Character classes methods: 
+
+int Character::getCharacterID() const {
+  return m_characterID;
+}
+const std::string& Character::getCharacterName() const {
+  return m_name;
+}
+
+int Character::getLevels() const {
+  return m_level;
+}
+
+int Character::characterSetup(const std::string fileName) {
+  return 0;
+}
 
 /*
 class Shovel: public Tool {
@@ -91,6 +190,7 @@ int main() {
  */
 int main() {
 //	setupItems();
+  /*
 	Character Azdelth(std::string("Azdelth"), 0, 8647);
 	Weapon woodenSword(std::string("Wooden Sword"), 1, 3, 2, 100);
 	Weapon primitiveClub(std::string("Primitive Club"), 2, 3, 2, 100);
@@ -103,5 +203,5 @@ int main() {
 	printWeaponInfo(primitiveClub);
 	printToolInfo(woodenShovel);
 	printCharacterInfo(Azdelth);
-	
+	*/
 }

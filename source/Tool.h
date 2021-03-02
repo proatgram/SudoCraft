@@ -13,15 +13,13 @@ public:
 		m_range(range)
 	{
 	}
-	void setDurability(int durability) {
-		m_durability = durability;
-		}
+	void setDurability(int durability);
 
-	void setRange(const int range) {
-		m_range = range;
-		}
-	int getDurability() const {return m_durability;}
-	int getRange() const {return m_range;}
+	void setRange(const int range);
+
+	int getDurability() const;
+
+	int getRange() const;
 
 private:
 	int m_durability;

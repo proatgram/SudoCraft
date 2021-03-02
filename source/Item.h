@@ -12,12 +12,12 @@ public:
        m_id(id)
     {
 	 	 
-	}
+	  }
 	
 	virtual ~Item() = default;  
     
-    int getId() const { return m_id; }
-    const std::string& getName() const { return m_name; }
+    int getId() const;
+    const std::string& getName() const;
     
 //Data Members
 protected:

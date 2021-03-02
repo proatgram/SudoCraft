@@ -8,13 +8,10 @@ class Character {
 public:
 
 	virtual ~Character() = default;
-	int getCharacterID() const {return m_characterID;}
-	const std::string& getCharacterName() const {return m_name;}
-	int getLevels() const {return m_level;}
-	int characterSetup(const std::string fileName) {
-		
-		return 0;
-}
+	int getCharacterID() const;
+	const std::string& getCharacterName() const;
+	int getLevels() const;
+	int characterSetup(const std::string fileName);
   
 private:
 	std::string m_name;

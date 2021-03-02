@@ -16,7 +16,7 @@ public:
 	// Creates an inventory with the specific items
 	Inventory(uint8_t capacity, const std::vector<Item*>& items);
 
-	virtual ~Inventory() = default;
+  virtual ~Inventory = default;
 
 	// Tries to add the item to the inventory. If the inventory
 	// is full the method will return false
