@@ -1,0 +1,68 @@
+#ifndef __INVENTORY_H__
+#define __INVENTORY_H__
+
+#include <vector>
+#include <cstdint>
+
+#include "Item.h"
+
+
+class Inventory
+{
+public:
+    // Creates an empty inventory with a specific capacity
+	Inventory(uint8_t capacity);
+
+	// Creates an inventory with the specific items
+	Inventory(uint8_t capacity, const std::vector<Item*>& items);
+
+  virtual ~Inventory = default;
+
+	// Tries to add the item to the inventory. If the inventory
+	// is full the method will return false
+	bool addItem(Item* item);
+
+	// This returns a deep copy of the vector
+	std::vector<Item*> getItems();
+
+	const std::vector<Item*>& getItems() const; 
+
+	// Returns an item at a specific index
+	Item* getItem(int index);
+
+	// For when this is a const class
+	const Item* getItem(int index);
+
+	// Remove the specific item
+    void removeItem(Item* item);
+
+private:
+	std::vector<Item*> m_items;	
+	uint8_t m_capacity;
+}
+
+
+// Inventory.cpp file
+#include "Inventory.h"
+
+void Inventory::removeItem(Item* item)
+{
+	std::vector<Item*>::iterator it = m_items.find(item);
+	if(it != m_items.end())
+	{
+		m_items.erase(it);
+	}
+}
+
+bool Inventory::addItem(Item* item)
+{
+	if(m_items.size() + 1 >= m_capacity)
+	{
+	   return false;
+	}
+	else
+	{
+		m_items.push_back(item);
+		return true;
+	}
+}
