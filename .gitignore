@@ -1,0 +1,9 @@
+# Ignore object files
+*.o
+*.so
+
+# Ignore Vim Files
+*.swp
+*.swm
+*.swn
+*.swo
