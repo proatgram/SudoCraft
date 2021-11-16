@@ -1,2 +1,0 @@
-language = "cpp"
-run = "g++ -c ~/SudoCraft/source/Game.cpp && g++ -o ~/SudoCraft/CompiledCode/Game ~/SudoCraft/source/Game.cpp"
