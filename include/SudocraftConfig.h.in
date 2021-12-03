@@ -1,0 +1,3 @@
+// The configures options and settings for Tutorial
+#define Sudocraft_VERSION_MAJOR @Sudocraft_VERSION_MAJOR@
+#define Sudocraft_VERSION_MINOR @Sudocraft_VERSION_MINOR@

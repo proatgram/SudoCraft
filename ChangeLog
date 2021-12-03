@@ -54,4 +54,9 @@
 					Defining Item attributes. (Name,
 					Durability, Damage, Crafting
 					Ingredients, Etc.)
-
+				2021-12-3  Timothy Hutchins 
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Added CMake functionality.
+					* CMakeLists.txt : CMake build file.
+					Not auto generated. 
