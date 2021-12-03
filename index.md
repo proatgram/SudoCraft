@@ -17,9 +17,9 @@ mkdir build && cd build
 make && make install
 ```
 
-See [ChangeLog](ChangeLog)For more details on sources.
-See [INSTALL](INSTALL)For more instructions on how Autotools and Make works and how to Install
-See [AUTHORS](AUTHORS)For Authors of this project
+See [ChangeLog](ChangeLog) For more details on sources.
+See [INSTALL](INSTALL) For more instructions on how Autotools and Make works and how to Install
+See [AUTHORS](AUTHORS) For Authors of this project
 
 
 This site was built using [GitHub Pages](https://pages.github.com/).
