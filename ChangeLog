@@ -1,0 +1,439 @@
+2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+	
+	Original date of addition for GNU Autotools and Automake.
+	* src/Character.cpp : Has all the functions for the character.
+	* src/Inventory.cpp : Has all the functions for the inventory, used
+	for the character. Uses a vector to store Item objects and child
+	objects of the Item class.
+	* src/Craft.cpp : Implements crafting. Searches an Inventory Objects
+	vector and sorts it into a 2d array for proccessing. If the neccessary
+	items needed to make the item are found, the item is crafted.
+	* src/Item.cpp : Implements functions and variables for Items.
+	* src/Tool.cpp : Implements functions and variables for Tools, child
+	of the Item class.
+	* src/Weapon.cpp : Implements functions and variables for Weapons,
+	child of the Item class.
+	2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+	<tgh6407@gmail.com>
+		
+		Original date of addition for GNU Autotools and Automake.
+		* src/Character.cpp : Has all the functions for the character.
+		* src/Inventory.cpp : Has all the functions for the inventory,
+		used for the character. Uses a vector to store Item objects
+		and child objects of the Item class.
+		* src/Craft.cpp : Implements crafting. Searches an Inventory
+		Objects vector and sorts it into a 2d array for proccessing.
+		If the neccessary items needed to make the item are found, the
+		item is crafted.
+		* src/Item.cpp : Implements functions and variables for Items.
+		* src/Tool.cpp : Implements functions and variables for Tools,
+		child of the Item class.
+		* src/Weapon.cpp : Implements functions and variables for
+		Weapons, child of the Item class.
+		2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+		<tgh6407@gmail.com>
+			
+			Original date of addition for GNU Autotools and
+			Automake.
+			* src/Character.cpp : Has all the functions for the
+			character.
+			* src/Inventory.cpp : Has all the functions for the
+			inventory, used for the character. Uses a vector to
+			store Item objects and child objects of the Item
+			class.
+			* src/Craft.cpp : Implements crafting. Searches an
+			Inventory Objects vector and sorts it into a 2d array
+			for proccessing. If the neccessary items needed to
+			make the item are found, the item is crafted.
+			* src/Item.cpp : Implements functions and variables
+			for Items.
+			* src/Tool.cpp : Implements functions and variables
+			for Tools, child of the Item class.
+			* src/Weapon.cpp : Implements functions and variables
+			for Weapons, child of the Item class.
+			2021-12-2  Timothy Hutchins
+			<TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+				
+				Original date of addition for GNU Autotools
+				and Automake.
+				* src/Character.cpp : Has all the functions
+				for the character.
+				* src/Inventory.cpp : Has all the functions
+				for the inventory, used for the character.
+				Uses a vector to store Item objects and child
+				objects of the Item class.
+				* src/Craft.cpp : Implements crafting.
+				Searches an Inventory Objects vector and sorts
+				it into a 2d array for proccessing. If the
+				neccessary items needed to make the item are
+				found, the item is crafted.
+				* src/Item.cpp : Implements functions and
+				variables for Items.
+				* src/Tool.cpp : Implements functions and
+				variables for Tools, child of the Item class.
+				* src/Weapon.cpp : Implements functions and
+				variables for Weapons, child of the Item
+				class.
+				2021-12-2  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					
+					Original date of addition for GNU
+					Autotools and Automake.
+					* src/Character.cpp : Has all the
+					functions for the character.
+					* src/Inventory.cpp : Has all the
+					functions for the inventory, used for
+					the character. Uses a vector to store
+					Item objects and child objects of the
+					Item class.
+					* src/Craft.cpp : Implements crafting.
+					Searches an Inventory Objects vector
+					and sorts it into a 2d array for
+					proccessing. If the neccessary items
+					needed to make the item are found, the
+					item is crafted.
+					* src/Item.cpp : Implements functions
+					and variables for Items.
+					* src/Tool.cpp : Implements functions
+					and variables for Tools, child of Item
+the Item class.
+* src/Weapon.cpp : Implements functions and variables for Weapons, child of
+the Item class.
+2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+	
+	Original date of addition for GNU Autotools and Automake.
+	* src/Character.cpp : Has all the functions for the character.
+	* src/Inventory.cpp : Has all the functions for the inventory, used
+	for the character. Uses a vector to store Item objects and child
+	objects of the Item class.
+	* src/Craft.cpp : Implements crafting. Searches an Inventory Objects
+	vector and sorts it into a 2d array for proccessing. If the neccessary
+	items needed to make the item are found, the item is crafted.
+	* src/Item.cpp : Implements functions and variables for Items.
+	* src/Tool.cpp : Implements functions and variables for Tools, child
+	of the Item class.
+	* src/Weapon.cpp : Implements functions and variables for Weapons,
+	child of the Item class.
+	2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+	<tgh6407@gmail.com>
+		
+		Original date of addition for GNU Autotools and Automake.
+		* src/Character.cpp : Has all the functions for the character.
+		* src/Inventory.cpp : Has all the functions for the inventory,
+		used for the character. Uses a vector to store Item objects
+		and child objects of the Item class.
+		* src/Craft.cpp : Implements crafting. Searches an Inventory
+		Objects vector and sorts it into a 2d array for proccessing.
+		If the neccessary items needed to make the item are found, the
+		item is crafted.
+		* src/Item.cpp : Implements functions and variables for Items.
+		* src/Tool.cpp : Implements functions and variables for Tools,
+		child of the Item class.
+		* src/Weapon.cpp : Implements functions and variables for
+		Weapons, child of the Item class.
+		2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+		<tgh6407@gmail.com>
+			
+			Original date of addition for GNU Autotools and
+			Automake.
+			* src/Character.cpp : Has all the functions for the
+			character.
+			* src/Inventory.cpp : Has all the functions for the
+			inventory, used for the character. Uses a vector to
+			store Item objects and child objects of the Item
+			class.
+			* src/Craft.cpp : Implements crafting. Searches an
+			Inventory Objects vector and sorts it into a 2d array
+			for proccessing. If the neccessary items needed to
+			make the item are found, the item is crafted.
+			* src/Item.cpp : Implements functions and variables
+			for Items.
+			* src/Tool.cpp : Implements functions and variables
+			for Tools, child of the Item class.
+			* src/Weapon.cpp : Implements functions and variables
+			for Weapons, child of the Item class.
+			2021-12-2  Timothy Hutchins
+			<TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+				
+				Original date of addition for GNU Autotools
+				and Automake.
+				* src/Character.cpp : Has all the functions
+				for the character.
+				* src/Inventory.cpp : Has all the functions
+				for the inventory, used for the character.
+				Uses a vector to store Item objects and child
+				objects of the Item class.
+				* src/Craft.cpp : Implements crafting.
+				Searches an Inventory Objects vector and sorts
+				it into a 2d array for proccessing. If the
+				neccessary items needed to make the item are
+				found, the item is crafted.
+				* src/Item.cpp : Implements functions and
+				variables for Items.
+				* src/Tool.cpp : Implements functions and
+				variables for Tools, child of the Item class.
+				* src/Weapon.cpp : Implements functions and
+				variables for Weapons, child of the Item
+				class.
+				2021-12-2  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					
+					Original date of addition for GNU
+					Autotools and Automake.
+					* src/Character.cpp : Has all the
+					functions for the character.
+					* src/Inventory.cpp : Has all the
+					functions for the inventory, used for
+					the character. Uses a vector to store
+					Item objects and child objects of the
+					Item class.
+					* src/Craft.cpp : Implements crafting.
+					Searches an Inventory Objects vector
+					and sorts it into a 2d array for
+					proccessing. If the neccessary items
+					needed to make the item are found, the
+					item is crafted.
+					* src/Item.cpp : Implements functions
+					and variables for Items.
+					* src/Tool.cpp : Implements functions
+					and variables for Tools, child of Item
+the Item class.
+* src/Weapon.cpp : Implements functions and variables for Weapons, child of
+the Item class.
+2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+	
+	Original date of addition for GNU Autotools and Automake.
+	* src/Character.cpp : Has all the functions for the character.
+	* src/Inventory.cpp : Has all the functions for the inventory, used
+	for the character. Uses a vector to store Item objects and child
+	objects of the Item class.
+	* src/Craft.cpp : Implements crafting. Searches an Inventory Objects
+	vector and sorts it into a 2d array for proccessing. If the neccessary
+	items needed to make the item are found, the item is crafted.
+	* src/Item.cpp : Implements functions and variables for Items.
+	* src/Tool.cpp : Implements functions and variables for Tools, child
+	of the Item class.
+	* src/Weapon.cpp : Implements functions and variables for Weapons,
+	child of the Item class.
+	2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+	<tgh6407@gmail.com>
+		
+		Original date of addition for GNU Autotools and Automake.
+		* src/Character.cpp : Has all the functions for the character.
+		* src/Inventory.cpp : Has all the functions for the inventory,
+		used for the character. Uses a vector to store Item objects
+		and child objects of the Item class.
+		* src/Craft.cpp : Implements crafting. Searches an Inventory
+		Objects vector and sorts it into a 2d array for proccessing.
+		If the neccessary items needed to make the item are found, the
+		item is crafted.
+		* src/Item.cpp : Implements functions and variables for Items.
+		* src/Tool.cpp : Implements functions and variables for Tools,
+		child of the Item class.
+		* src/Weapon.cpp : Implements functions and variables for
+		Weapons, child of the Item class.
+		2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+		<tgh6407@gmail.com>
+			
+			Original date of addition for GNU Autotools and
+			Automake.
+			* src/Character.cpp : Has all the functions for the
+			character.
+			* src/Inventory.cpp : Has all the functions for the
+			inventory, used for the character. Uses a vector to
+			store Item objects and child objects of the Item
+			class.
+			* src/Craft.cpp : Implements crafting. Searches an
+			Inventory Objects vector and sorts it into a 2d array
+			for proccessing. If the neccessary items needed to
+			make the item are found, the item is crafted.
+			* src/Item.cpp : Implements functions and variables
+			for Items.
+			* src/Tool.cpp : Implements functions and variables
+			for Tools, child of the Item class.
+			* src/Weapon.cpp : Implements functions and variables
+			for Weapons, child of the Item class.
+			2021-12-2  Timothy Hutchins
+			<TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+				
+				Original date of addition for GNU Autotools
+				and Automake.
+				* src/Character.cpp : Has all the functions
+				for the character.
+				* src/Inventory.cpp : Has all the functions
+				for the inventory, used for the character.
+				Uses a vector to store Item objects and child
+				objects of the Item class.
+				* src/Craft.cpp : Implements crafting.
+				Searches an Inventory Objects vector and sorts
+				it into a 2d array for proccessing. If the
+				neccessary items needed to make the item are
+				found, the item is crafted.
+				* src/Item.cpp : Implements functions and
+				variables for Items.
+				* src/Tool.cpp : Implements functions and
+				variables for Tools, child of the Item class.
+				* src/Weapon.cpp : Implements functions and
+				variables for Weapons, child of the Item
+				class.
+				2021-12-2  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					
+					Original date of addition for GNU
+					Autotools and Automake.
+					* src/Character.cpp : Has all the
+					functions for the character.
+					* src/Inventory.cpp : Has all the
+					functions for the inventory, used for
+					the character. Uses a vector to store
+					Item objects and child objects of the
+					Item class.
+					* src/Craft.cpp : Implements crafting.
+					Searches an Inventory Objects vector
+					and sorts it into a 2d array for
+					proccessing. If the neccessary items
+					needed to make the item are found, the
+					item is crafted.
+					* src/Item.cpp : Implements functions
+					and variables for Items.
+					* src/Tool.cpp : Implements functions
+					and variables for Tools, child of Item
+the Item class.
+* src/Weapon.cpp : Implements functions and variables for Weapons, child of
+the Item class.
+2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+	
+	Original date of addition for GNU Autotools and Automake.
+	* src/Character.cpp : Has all the functions for the character.
+	* src/Inventory.cpp : Has all the functions for the inventory, used
+	for the character. Uses a vector to store Item objects and child
+	objects of the Item class.
+	* src/Craft.cpp : Implements crafting. Searches an Inventory Objects
+	vector and sorts it into a 2d array for proccessing. If the neccessary
+	items needed to make the item are found, the item is crafted.
+	* src/Item.cpp : Implements functions and variables for Items.
+	* src/Tool.cpp : Implements functions and variables for Tools, child
+	of the Item class.
+	* src/Weapon.cpp : Implements functions and variables for Weapons,
+	child of the Item class.
+	2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+	<tgh6407@gmail.com>
+		
+		Original date of addition for GNU Autotools and Automake.
+		* src/Character.cpp : Has all the functions for the character.
+		* src/Inventory.cpp : Has all the functions for the inventory,
+		used for the character. Uses a vector to store Item objects
+		and child objects of the Item class.
+		* src/Craft.cpp : Implements crafting. Searches an Inventory
+		Objects vector and sorts it into a 2d array for proccessing.
+		If the neccessary items needed to make the item are found, the
+		item is crafted.
+		* src/Item.cpp : Implements functions and variables for Items.
+		* src/Tool.cpp : Implements functions and variables for Tools,
+		child of the Item class.
+		* src/Weapon.cpp : Implements functions and variables for
+		Weapons, child of the Item class.
+		2021-12-2  Timothy Hutchins  <TheTimBrick6407@gmail.com>
+		<tgh6407@gmail.com>
+			
+			Original date of addition for GNU Autotools and
+			Automake.
+			* src/Character.cpp : Has all the functions for the
+			character.
+			* src/Inventory.cpp : Has all the functions for the
+			inventory, used for the character. Uses a vector to
+			store Item objects and child objects of the Item
+			class.
+			* src/Craft.cpp : Implements crafting. Searches an
+			Inventory Objects vector and sorts it into a 2d array
+			for proccessing. If the neccessary items needed to
+			make the item are found, the item is crafted.
+			* src/Item.cpp : Implements functions and variables
+			for Items.
+			* src/Tool.cpp : Implements functions and variables
+			for Tools, child of the Item class.
+			* src/Weapon.cpp : Implements functions and variables
+			for Weapons, child of the Item class.
+			2021-12-2  Timothy Hutchins
+			<TheTimBrick6407@gmail.com> <tgh6407@gmail.com>
+				
+				Original date of addition for GNU Autotools
+				and Automake.
+				* src/Character.cpp : Has all the functions
+				for the character.
+				* src/Inventory.cpp : Has all the functions
+				for the inventory, used for the character.
+				Uses a vector to store Item objects and child
+				objects of the Item class.
+				* src/Craft.cpp : Implements crafting.
+				Searches an Inventory Objects vector and sorts
+				it into a 2d array for proccessing. If the
+				neccessary items needed to make the item are
+				found, the item is crafted.
+				* src/Item.cpp : Implements functions and
+				variables for Items.
+				* src/Tool.cpp : Implements functions and
+				variables for Tools, child of the Item class.
+				* src/Weapon.cpp : Implements functions and
+				variables for Weapons, child of the Item
+				class.
+				2021-12-2  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					
+					Original date of addition for GNU
+					Autotools and Automake.
+					* src/Game.cpp : Implements the main
+					game.
+					* src/Character.cpp : Has all the
+					functions for the character.
+					* src/Inventory.cpp : Has all the
+					functions for the inventory, used for
+					the character. Uses a vector to store
+					Item objects and child objects of the
+					Item class.
+					* src/Craft.cpp : Implements crafting.
+					Searches an Inventory Objects vector
+					and sorts it into a 2d array for
+					proccessing. If the neccessary items
+					needed to make the item are found, the
+					item is crafted.
+					* src/Item.cpp : Implements functions
+					and variables for Items.
+					* src/Tool.cpp : Implements functions
+					and variables for Tools, child of Item 
+					the Item class.
+					* src/Weapon.cpp : Implements functions 
+					and variables for Weapons, child of the 
+					Item class.
+					* src/InventoryExample.txt : An
+					example that my dad wrote of
+					implementing an inventory class.
+					* include/Character.h : Header file
+					for Character.cpp in src directory.
+					Defines methods in the Character
+					class.
+					* include/Inventory.cpp : Header file
+					for Inventory.cpp in src directory.
+					Defines methods in the Inventory
+					class.
+					* include/Craft.h : Header file for
+					Craft.cpp in src directory. Defines
+					methods in the Craft class.
+					* include/Item.h : Header file for
+					Item.cpp in src directory. Defines
+					methods in the Item class.
+					* include/Tool.h : Header file for
+					Item.cpp in src directory. Defines
+					methods in the Tool class.
+					* include/Weapon.h : Header file for
+					Weapon.cpp in src directory. Defines
+					methods in the Weapon class.
+					* include/ItemLists.h : Header file
+					Defining Item attributes. (Name,
+					Durability, Damage, Crafting
+					Ingredients, Etc.)
+
