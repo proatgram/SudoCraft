@@ -89,7 +89,7 @@
 					Changed Github Workflows.
 					* .github/workflows/cmake.yml :
 					Changed to cmake-windows-latest.yml
-					* .github.workflows/cmake-linux-latest.ymm :
+					* .github.workflows/cmake-linux-latest.yml :
 					Added cmake-linux-latest.yml to test
 					CMake on linux alongside CMake on
 					Windows.
@@ -98,3 +98,14 @@
 					Windows using Microsoft Visual
 					Studio's and Microsoft Visual Studio's
 					with CLang
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* .github/workflows/codeql-analysis.yml :
+					Added codeql-analysis workflow for
+					Github
+					* README.md : Updated README.md
+					* SECURITY.md : Added SECURITY.md
+					which tells how to report a
+					vulnerability in the source code
+

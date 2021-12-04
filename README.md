@@ -1,3 +1,6 @@
+[![C/C++ CI](https://github.com/proatgram/SudoCraft/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/c-cpp.yml)[![CMake](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-linux-latest.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-linux-latest.yml)[![CMake](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-windows-latest.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-windows-latest.yml)[![CodeQL](https://github.com/proatgram/SudoCraft/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/codeql-analysis.yml)
+
+
 # SudoCraft
 This is a prototype game that I am creating.
 At this moment in time it is supposed to be a 2D dungeon crawler Minecrfat type game.
