@@ -83,3 +83,13 @@
 					standard C++, GNU gcc allows such as
 					an extention but MSBuild will not
 					compile.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Changed Github Workflows.
+					* .github/workflows/cmake.yml :
+					Changed to cmake-windows-latest.yml
+					* .github.workflows/cmake-linux-latest.ymm :
+					Added cmake-linux-latest.yml to test
+					CMake on linux alongside CMake on
+					Windows.
