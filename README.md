@@ -18,7 +18,7 @@ mkdir build && cd build
 cmake ..
 make && make install
 ```
-To install to your user acound or locally, run:
+To install to your user account or locally, run:
 ```
 mkdir build && cd build
 ../configure --prefix= your/install/path
