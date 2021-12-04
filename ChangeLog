@@ -93,3 +93,8 @@
 					Added cmake-linux-latest.yml to test
 					CMake on linux alongside CMake on
 					Windows.
+					* README.md : Added information for
+					building using CMake and building on
+					Windows using Microsoft Visual
+					Studio's and Microsoft Visual Studio's
+					with CLang
