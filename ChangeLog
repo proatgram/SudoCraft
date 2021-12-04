@@ -59,4 +59,27 @@
 				<tgh6407@gmail.com>
 					Added CMake functionality.
 					* CMakeLists.txt : CMake build file.
-					Not auto generated. 
+					Not auto generated.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* .github/workflows/cmake.yml : Added
+					Github Workflows for CMake using
+					windows-latest for cross compatibility
+					checks.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Fixed problem with cross compatibility
+					with Linux g++ and Windows Visual
+					Studio's MSBuild
+					* src/Craft.cpp (itemlist) : Changed
+					from ```int itemlist[num1][0x02];```
+					to ```int (*itemlist)[2] = new
+					int[num1][0x02];``` Since MSBuild for
+					.NET framework does not allow use of
+					```int itemlist[num1][0x02]```
+					variable length arrays as it is not in
+					standard C++, GNU gcc allows such as
+					an extention but MSBuild will not
+					compile.

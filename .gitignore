@@ -7,3 +7,6 @@
 *.swm
 *.swn
 *.swo
+
+# Ignore build directory (If present)
+build/

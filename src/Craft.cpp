@@ -21,7 +21,7 @@ Item * Craft::craftItem(int itemID, Inventory* inventory) {
 		}
 	}
 	uint8_t num = 0x00;
-	int itemlist[num1][0x02];
+	int (*itemlist)[2] = new int[num1][0x02];
 	for (uint8_t times = 0x00; times < num1; times++) {
 		for (uint8_t times1 = 0x00; times1 < 0x02; times1++) {
 			itemlist[times][times1] = 0xFF;
