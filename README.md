@@ -31,10 +31,6 @@ CMAKE_INSTALL_PREFIX = your/install/path/
 cmake ..
 make && make install
 ``` 
-Then open the .sln solution file, or build from the command line by using:
-```
-cmake --build . --config Release
-```
 
 ## Windows
 ### Visual Studio's Project
@@ -55,4 +51,4 @@ cmake .. -G "Visual Studios 16 2019 Win64" -T "ClangCL"
 cmake --build .
 ```
 # Running
-In the command line, run 'sudocraft'.
+In the command line, run `sudocraft`.
