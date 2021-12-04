@@ -1,5 +1,5 @@
 # Sudocraft
-###### A home project by Timothy Hutchins (TheTimBrick)
+### A home project by Timothy Hutchins (TheTimBrick)
 See [README.md](https://github.com/proatgram/SudoCraft/blob/main/README.md)
 
 See [Sudocraft](https://github.com/proatgram/Sudocraft/)
