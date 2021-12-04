@@ -17,7 +17,7 @@ or:
 mkdir build && cd build
 cmake ..
 make && make install
-``
+```
 To install to your user acound or locally, run:
 ```
 mkdir build && cd build
