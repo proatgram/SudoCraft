@@ -29,3 +29,4 @@ int Character::characterSetup(const std::string fileName) {
 Inventory* Character::getInventory() {
 	return inventory;
 }
+struct Character::position position;

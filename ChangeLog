@@ -108,4 +108,8 @@
 					* SECURITY.md : Added SECURITY.md
 					which tells how to report a
 					vulnerability in the source code
-
+				2021-12-7  Timothy Hutchins
+				<TheTimBrick6407@gmail>
+				<tgh6407@gmail>
+					* src/Character.cpp : Added character position struct.
+					* include/Character.h : Added character position struct.

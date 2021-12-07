@@ -23,8 +23,13 @@ public:
 	int getLevels() const;
 	int characterSetup(const std::string fileName);
 	Inventory* getInventory();
-	  
+	struct position {
+		int32_t x = 0x00;
+		int32_t y = 0x00;
+		int32_t z = 0x00;
+	};
 private:
+
 	std::string m_name;
 	int m_level;
 	const int m_characterID;
