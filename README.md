@@ -24,13 +24,13 @@ make && make install
 To install to your user account or locally, run:
 ```
 mkdir build && cd build
-../configure --prefix= your/install/path
+../configure --prefix=your/install/path
 make && make install
 ```
 or:
 ```
 mkdir build && cd build
-CMAKE_INSTALL_PREFIX = your/install/path/
+CMAKE_INSTALL_PREFIX=your/install/path/
 cmake ..
 make && make install
 ``` 
