@@ -113,3 +113,10 @@
 				<tgh6407@gmail>
 					* src/Character.cpp : Added character position struct.
 					* include/Character.h : Added character position struct.
+				2021-12-8  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* configure : Used autoreconf to reconfigure the configure script.
+					* Makefile.in : Updated via configure script.
+					* autom4te.cache/ : Removed this directory
+					
