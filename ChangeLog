@@ -119,4 +119,8 @@
 					* configure : Used autoreconf to reconfigure the configure script.
 					* Makefile.in : Updated via configure script.
 					* autom4te.cache/ : Removed this directory
+				2021-12-10  Timothy Hutchins
+				<TheTimBrick6407@gmail>
+				<tgh6407@gmail>
+					* src/World_Gen.cpp : Added start of a world generation class.
 					

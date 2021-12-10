@@ -16,7 +16,7 @@
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)
 {
-		// Axe ID: 1 damage: 5 Range: 1
+		// Axe ID: 1age: 5 Range: 1
 		printf("%s ID: %d Damage: %d Range: %d Durability: %d\n", 
 		weapon.getName().c_str(),
 		weapon.getId(),
