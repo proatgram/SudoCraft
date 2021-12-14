@@ -123,4 +123,9 @@
 				<TheTimBrick6407@gmail>
 				<tgh6407@gmail>
 					* src/World_Gen.cpp : Added start of a world generation class.
+				2021-12-14  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* configure : Fixed
+					* .gitignore : Added *.exe
 					
