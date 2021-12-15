@@ -1,3 +1,4 @@
+[![Makefile CI](https://github.com/proatgram/SudoCraft/actions/workflows/makefile.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/makefile.yml)[![CMake](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-linux-latest.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-linux-latest.yml)[![CMake](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-windows-latest.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/cmake-windows-latest.yml)[![CodeQL](https://github.com/proatgram/SudoCraft/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/proatgram/SudoCraft/actions/workflows/codeql-analysis.yml)
 # Sudocraft
 ### A home project by Timothy Hutchins (TheTimBrick)
 See [README.md](https://github.com/proatgram/SudoCraft/blob/main/README.md)
