@@ -1,0 +1,3 @@
+C:/Users/tgh64/source/repos/SudoCraft/CMakeFiles/sudocraft.dir
+C:/Users/tgh64/source/repos/SudoCraft/CMakeFiles/ALL_BUILD.dir
+C:/Users/tgh64/source/repos/SudoCraft/CMakeFiles/ZERO_CHECK.dir

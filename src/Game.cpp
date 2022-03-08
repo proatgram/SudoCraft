@@ -1,10 +1,8 @@
-//Includes from the standered C and C++ Library's.
 #include <cstdio>
 #include <cstdint>
 #include <string>
 #include <algorithm>
 
-//Includes for my own .h files.
 #include "../include/Item.h"
 #include "../include/Tool.h"
 #include "../include/Weapon.h"
@@ -12,6 +10,8 @@
 #include "../include/Inventory.h"
 #include "../include/ItemLists.h"
 #include "../include/Craft.h"
+#include "../include/SafeData.hpp"
+#include "../include/GameUI.h"
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)
