@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <string>
 #include <cstring>
-#include "../include/Item.h"
+#include "Item.h"
 
 int Item::getId() const {
   return m_id;

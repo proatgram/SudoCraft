@@ -3,12 +3,12 @@
 #include <string>
 #include <cstring>
 #include <climits>
-#include "../include/Craft.h"
-#include "../include/ItemLists.h"
-#include "../include/Item.h"
-#include "../include/Weapon.h"
-#include "../include/Tool.h"
-#include "../include/Inventory.h"
+#include "Craft.h"
+#include "ItemLists.h"
+#include "Item.h"
+#include "Weapon.h"
+#include "Tool.h"
+#include "Inventory.h"
 
 Item * Craft::craftItem(int itemID, Inventory* inventory) {
 	if (itemMake[itemID][0x00] == INT_MAX) {

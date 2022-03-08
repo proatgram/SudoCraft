@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <string>
 #include <cstring>
-#include "../include/Item.h"
-#include "../include/Weapon.h"
+#include "Item.h"
+#include "Weapon.h"
 
 // Declares the Weapon Class methods:
 

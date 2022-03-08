@@ -1,5 +1,6 @@
 #include <vector>
-#include "../include/WorldGen.h"
+#include <string>
+#include "WorldGen.h"
 
 
 #ifndef __WORLD__
@@ -13,6 +14,15 @@ private:
 	int m_size_x;
 	int m_size_y;
 	float m_heightMap;
+	WorldGeneration m_generate;
+	struct m_blockData {
+		unsigned short int blockType;
+		std::string nbtData;
+	};
+	std::vector<m_blockData> m_blocksPositive_y;
+	std::vector<m_blockData> m_blocksPositive_x;
+	std::vector<m_blockData> m_blocksNegative_y;
+	std::vector<m_blockData> m_blocksNegative_x;
 };
 
 #endif

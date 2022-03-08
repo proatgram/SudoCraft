@@ -1,20 +1,18 @@
 #include <cstdio>
 #include <cstdint>
 
-#include "../include/WorldGen.h"
-#include "../include/PerlinNoise.hpp"
 
-WorldGeneration::WorldGeneration(siv::PerlinNoise::seed_type seed) :
-	m_seed(seed),
-	m_noise(m_seed)
+#include "WorldGen.h"
+
+WorldGeneration::WorldGeneration() 
 {
 
 }
 
 int WorldGeneration::getSeed() {
-	return m_seed;
+	return 0;
 }
 
 float WorldGeneration::generate(int x, int y) {
-	return m_noise.noise2D(x * 0.01, y * 0.01);
+	return 0.0f;
 }

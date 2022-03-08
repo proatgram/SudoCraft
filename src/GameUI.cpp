@@ -1,4 +1,4 @@
-#include "../include/GameUI.h"
+#include "GameUI.h"
 
 int GameUI::startKey() {
 	return 1;

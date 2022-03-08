@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <string>
 #include <cstring>
-#include "../include/Character.h"
-#include "../include/Inventory.h"
+#include "Character.h"
+#include "Inventory.h"
 
 // Declares the Character Class methods:
 

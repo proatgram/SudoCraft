@@ -3,15 +3,15 @@
 #include <string>
 #include <algorithm>
 
-#include "../include/Item.h"
-#include "../include/Tool.h"
-#include "../include/Weapon.h"
-#include "../include/Character.h"
-#include "../include/Inventory.h"
-#include "../include/ItemLists.h"
-#include "../include/Craft.h"
-#include "../include/SafeData.hpp"
-#include "../include/GameUI.h"
+#include "Item.h"
+#include "Tool.h"
+#include "Weapon.h"
+#include "Character.h"
+#include "Inventory.h"
+#include "ItemLists.h"
+#include "Craft.h"
+#include "SafeData.hpp"
+#include "GameUI.h"
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)

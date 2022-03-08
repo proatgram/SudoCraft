@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <string>
 #include <cstring>
-#include "../include/Item.h"
-#include "../include/Tool.h"
+#include "Item.h"
+#include "Tool.h"
 
 // Declares the Tool classes methods:
 

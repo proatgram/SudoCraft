@@ -2,10 +2,10 @@
 #include <cstdint>
 #include <string>
 #include <cstring>
-#include "../include/Inventory.h"
-#include "../include/Item.h"
-#include "../include/Weapon.h"
-#include "../include/Tool.h"
+#include "Inventory.h"
+#include "Item.h"
+#include "Weapon.h"
+#include "Tool.h"
 
 
 // Defines Inventory methods:
