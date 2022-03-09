@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstdint>
 
-
+#include "../deps/libnoise/include/noise/noise.h"
 #include "WorldGen.h"
 
 WorldGeneration::WorldGeneration() 
