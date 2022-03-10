@@ -1,0 +1,131 @@
+				2021-12-2  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					
+					Original date of addition for GNU
+					Autotools and Automake.
+					* src/Game.cpp : Implements the main
+					game.
+					* src/Character.cpp : Has all the
+					functions for the character.
+					* src/Inventory.cpp : Has all the
+					functions for the inventory, used for
+					the character. Uses a vector to store
+					Item objects and child objects of the
+					Item class.
+					* src/Craft.cpp : Implements crafting.
+					Searches an Inventory Objects vector
+					and sorts it into a 2d array for
+					proccessing. If the neccessary items
+					needed to make the item are found, the
+					item is crafted.
+					* src/Item.cpp : Implements functions
+					and variables for Items.
+					* src/Tool.cpp : Implements functions
+					and variables for Tools, child of Item 
+					the Item class.
+					* src/Weapon.cpp : Implements functions 
+					and variables for Weapons, child of the 
+					Item class.
+					* src/InventoryExample.txt : An
+					example that my dad wrote of
+					implementing an inventory class.
+					* include/Character.h : Header file
+					for Character.cpp in src directory.
+					Defines methods in the Character
+					class.
+					* include/Inventory.cpp : Header file
+					for Inventory.cpp in src directory.
+					Defines methods in the Inventory
+					class.
+					* include/Craft.h : Header file for
+					Craft.cpp in src directory. Defines
+					methods in the Craft class.
+					* include/Item.h : Header file for
+					Item.cpp in src directory. Defines
+					methods in the Item class.
+					* include/Tool.h : Header file for
+					Item.cpp in src directory. Defines
+					methods in the Tool class.
+					* include/Weapon.h : Header file for
+					Weapon.cpp in src directory. Defines
+					methods in the Weapon class.
+					* include/ItemLists.h : Header file
+					Defining Item attributes. (Name,
+					Durability, Damage, Crafting
+					Ingredients, Etc.)
+				2021-12-3  Timothy Hutchins 
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Added CMake functionality.
+					* CMakeLists.txt : CMake build file.
+					Not auto generated.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* .github/workflows/cmake.yml : Added
+					Github Workflows for CMake using
+					windows-latest for cross compatibility
+					checks.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Fixed problem with cross compatibility
+					with Linux g++ and Windows Visual
+					Studio's MSBuild
+					* src/Craft.cpp (itemlist) : Changed
+					from ```int itemlist[num1][0x02];```
+					to ```int (*itemlist)[2] = new
+					int[num1][0x02];``` Since MSBuild for
+					.NET framework does not allow use of
+					```int itemlist[num1][0x02]```
+					variable length arrays as it is not in
+					standard C++, GNU gcc allows such as
+					an extention but MSBuild will not
+					compile.
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					Changed Github Workflows.
+					* .github/workflows/cmake.yml :
+					Changed to cmake-windows-latest.yml
+					* .github.workflows/cmake-linux-latest.yml :
+					Added cmake-linux-latest.yml to test
+					CMake on linux alongside CMake on
+					Windows.
+					* README.md : Added information for
+					building using CMake and building on
+					Windows using Microsoft Visual
+					Studio's and Microsoft Visual Studio's
+					with CLang
+				2021-12-3  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* .github/workflows/codeql-analysis.yml :
+					Added codeql-analysis workflow for
+					Github
+					* README.md : Updated README.md
+					* SECURITY.md : Added SECURITY.md
+					which tells how to report a
+					vulnerability in the source code
+				2021-12-7  Timothy Hutchins
+				<TheTimBrick6407@gmail>
+				<tgh6407@gmail>
+					* src/Character.cpp : Added character position struct.
+					* include/Character.h : Added character position struct.
+				2021-12-8  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* configure : Used autoreconf to reconfigure the configure script.
+					* Makefile.in : Updated via configure script.
+					* autom4te.cache/ : Removed this directory
+				2021-12-10  Timothy Hutchins
+				<TheTimBrick6407@gmail>
+				<tgh6407@gmail>
+					* src/World_Gen.cpp : Added start of a world generation class.
+				2021-12-14  Timothy Hutchins
+				<TheTimBrick6407@gmail.com>
+				<tgh6407@gmail.com>
+					* configure : Fixed
+					* .gitignore : Added *.exe
+					
