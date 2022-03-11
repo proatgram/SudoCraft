@@ -1,5 +1,6 @@
 bin_PROGRAMS = sudocraft
 noinst_LIBRARIES = libnoise.a
+
 libnoise_a_SOURCES = deps/libnoise/src/module/abs.cpp\
 deps/libnoise/src/module/add.cpp\
 deps/libnoise/src/module/billow.cpp\
