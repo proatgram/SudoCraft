@@ -323,7 +323,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-sudocraft_CPPFLAGS = "-I$(top_srcdir)/include" "-std=c++17"
+sudocraft_CPPFLAGS = "-std=c++17" "-I$(top_srcdir)/include"
 include_HEADERS = $(top_srcdir)/include/*
 sudocraft_SOURCES = src/Game.cpp src/Inventory.cpp src/Character.cpp src/Craft.cpp src/Item.cpp src/Weapon.cpp src/Tool.cpp
 dist_doc_DATA = README.md
