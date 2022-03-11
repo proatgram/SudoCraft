@@ -59,7 +59,7 @@ int main() {
 	Azdelth.inventory->addItem(weapon1);
 	Weapon* weapon = reinterpret_cast<Weapon*>(craft.craftItem(0x00, Azdelth.getInventory()));
 	Azdelth.inventory->addItem(weapon);
-	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x05)->getName().c_str(), Azdelth.inventory->getItem(0x05)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x05))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x05))->getRange());
+	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
 
 }
