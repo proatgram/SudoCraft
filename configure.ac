@@ -11,6 +11,7 @@ AM_INIT_AUTOMAKE([subdir-objects])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
+AC_PROG_RANLIB
 
 # Checks for libraries.
 
