@@ -12,6 +12,7 @@
 #include "Craft.h"
 #include "SafeData.hpp"
 #include "GameUI.h"
+#include "noise/noise.h"
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)

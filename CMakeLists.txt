@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.21.3)
+
 # Set the project name
 project(Sudocraft VERSION 0.5)
 
