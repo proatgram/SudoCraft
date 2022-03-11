@@ -16,6 +16,7 @@
 
 
 
+
 VPATH = @srcdir@
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -106,14 +107,61 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(docdir)" \
 	"$(DESTDIR)$(includedir)"
 PROGRAMS = $(bin_PROGRAMS)
+LIBRARIES = $(noinst_LIBRARIES)
+AR = ar
+ARFLAGS = cru
+AM_V_AR = $(am__v_AR_@AM_V@)
+am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
+am__v_AR_0 = @echo "  AR      " $@;
+am__v_AR_1 = 
+libnoise_a_AR = $(AR) $(ARFLAGS)
+libnoise_a_LIBADD =
 am__dirstamp = $(am__leading_dot)dirstamp
+am_libnoise_a_OBJECTS =  \
+	deps/libnoise/src/module/libnoise_a-abs.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-add.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-billow.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-blend.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-cache.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-checkerboard.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-clamp.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-const.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-curve.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-cylinders.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-displace.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-exponent.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-invert.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-max.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-min.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-modulebase.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-multiply.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-perlin.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-power.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-ridgedmulti.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-rotatepoint.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-scalebias.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-scalepoint.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-select.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-spheres.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-terrace.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-translatepoint.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-turbulence.$(OBJEXT) \
+	deps/libnoise/src/module/libnoise_a-voronoi.$(OBJEXT) \
+	deps/libnoise/src/libnoise_a-latlon.$(OBJEXT) \
+	deps/libnoise/src/libnoise_a-noisegen.$(OBJEXT) \
+	deps/libnoise/src/model/libnoise_a-sphere.$(OBJEXT) \
+	deps/libnoise/src/model/libnoise_a-plane.$(OBJEXT) \
+	deps/libnoise/src/model/libnoise_a-line.$(OBJEXT) \
+	deps/libnoise/src/model/libnoise_a-cylinder.$(OBJEXT)
+libnoise_a_OBJECTS = $(am_libnoise_a_OBJECTS)
 am_sudocraft_OBJECTS = src/sudocraft-Game.$(OBJEXT) \
 	src/sudocraft-Inventory.$(OBJEXT) \
 	src/sudocraft-Character.$(OBJEXT) \
 	src/sudocraft-Craft.$(OBJEXT) src/sudocraft-Item.$(OBJEXT) \
-	src/sudocraft-Weapon.$(OBJEXT) src/sudocraft-Tool.$(OBJEXT)
+	src/sudocraft-Weapon.$(OBJEXT) src/sudocraft-Tool.$(OBJEXT) \
+	src/sudocraft-WorldGen.$(OBJEXT) src/sudocraft-World.$(OBJEXT)
 sudocraft_OBJECTS = $(am_sudocraft_OBJECTS)
-sudocraft_LDADD = $(LDADD)
+sudocraft_DEPENDENCIES = libnoise.a
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -129,13 +177,51 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = src/$(DEPDIR)/sudocraft-Character.Po \
+am__depfiles_remade =  \
+	deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po \
+	deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po \
+	deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po \
+	deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po \
+	deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po \
+	deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po \
+	deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po \
+	src/$(DEPDIR)/sudocraft-Character.Po \
 	src/$(DEPDIR)/sudocraft-Craft.Po \
 	src/$(DEPDIR)/sudocraft-Game.Po \
 	src/$(DEPDIR)/sudocraft-Inventory.Po \
 	src/$(DEPDIR)/sudocraft-Item.Po \
 	src/$(DEPDIR)/sudocraft-Tool.Po \
-	src/$(DEPDIR)/sudocraft-Weapon.Po
+	src/$(DEPDIR)/sudocraft-Weapon.Po \
+	src/$(DEPDIR)/sudocraft-World.Po \
+	src/$(DEPDIR)/sudocraft-WorldGen.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -154,8 +240,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(sudocraft_SOURCES)
-DIST_SOURCES = $(sudocraft_SOURCES)
+SOURCES = $(libnoise_a_SOURCES) $(sudocraft_SOURCES)
+DIST_SOURCES = $(libnoise_a_SOURCES) $(sudocraft_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -275,6 +361,7 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
+RANLIB = @RANLIB@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -323,9 +410,48 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
+noinst_LIBRARIES = libnoise.a
+libnoise_a_SOURCES = deps/libnoise/src/module/abs.cpp\
+deps/libnoise/src/module/add.cpp\
+deps/libnoise/src/module/billow.cpp\
+deps/libnoise/src/module/blend.cpp\
+deps/libnoise/src/module/cache.cpp\
+deps/libnoise/src/module/checkerboard.cpp\
+deps/libnoise/src/module/clamp.cpp\
+deps/libnoise/src/module/const.cpp\
+deps/libnoise/src/module/curve.cpp\
+deps/libnoise/src/module/cylinders.cpp\
+deps/libnoise/src/module/displace.cpp\
+deps/libnoise/src/module/exponent.cpp\
+deps/libnoise/src/module/invert.cpp\
+deps/libnoise/src/module/max.cpp\
+deps/libnoise/src/module/min.cpp\
+deps/libnoise/src/module/modulebase.cpp\
+deps/libnoise/src/module/multiply.cpp\
+deps/libnoise/src/module/perlin.cpp\
+deps/libnoise/src/module/power.cpp\
+deps/libnoise/src/module/ridgedmulti.cpp\
+deps/libnoise/src/module/rotatepoint.cpp\
+deps/libnoise/src/module/scalebias.cpp\
+deps/libnoise/src/module/scalepoint.cpp\
+deps/libnoise/src/module/select.cpp\
+deps/libnoise/src/module/spheres.cpp\
+deps/libnoise/src/module/terrace.cpp\
+deps/libnoise/src/module/translatepoint.cpp\
+deps/libnoise/src/module/turbulence.cpp\
+deps/libnoise/src/module/voronoi.cpp\
+deps/libnoise/src/latlon.cpp\
+deps/libnoise/src/noisegen.cpp\
+deps/libnoise/src/model/sphere.cpp\
+deps/libnoise/src/model/plane.cpp\
+deps/libnoise/src/model/line.cpp\
+deps/libnoise/src/model/cylinder.cpp
+
+libnoise_a_CPPFLAGS = "-I$(top_srcdir)/deps/libnoise/include/noise"
 include_HEADERS = $(top_srcdir)/include/* $(top_srcdir)/deps/libnoise/include/noise/*.h $(top_srcdir)/deps/libnoise/include/noise/module/*.h $(top_srcdir)/deps/libnoise/include/noise/model/*.h
-sudocraft_CPPFLAGS = "-I$(top_srcdir)/include" "-I$(top_srcdir)/deps/libnoise/include" "-std=c++17"
-sudocraft_SOURCES = src/Game.cpp src/Inventory.cpp src/Character.cpp src/Craft.cpp src/Item.cpp src/Weapon.cpp src/Tool.cpp
+sudocraft_CPPFLAGS = "-I$(top_srcdir)/include" "-I$(top_srcdir)/deps/libnoise/include" "-I$(top_srcdir)/deps/libnoise/include/noise" "-std=c++17"
+sudocraft_SOURCES = src/Game.cpp src/Inventory.cpp src/Character.cpp src/Craft.cpp src/Item.cpp src/Weapon.cpp src/Tool.cpp src/WorldGen.cpp src/World.cpp
+sudocraft_LDADD = libnoise.a
 dist_doc_DATA = README.md
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -422,6 +548,137 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+clean-noinstLIBRARIES:
+	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+deps/libnoise/src/module/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src/module
+	@: > deps/libnoise/src/module/$(am__dirstamp)
+deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src/module/$(DEPDIR)
+	@: > deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-abs.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-add.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-billow.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-blend.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-cache.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-checkerboard.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-clamp.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-const.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-curve.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-cylinders.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-displace.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-exponent.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-invert.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-max.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-min.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-modulebase.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-multiply.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-perlin.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-power.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-ridgedmulti.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-rotatepoint.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-scalebias.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-scalepoint.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-select.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-spheres.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-terrace.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-translatepoint.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-turbulence.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/module/libnoise_a-voronoi.$(OBJEXT):  \
+	deps/libnoise/src/module/$(am__dirstamp) \
+	deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src
+	@: > deps/libnoise/src/$(am__dirstamp)
+deps/libnoise/src/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src/$(DEPDIR)
+	@: > deps/libnoise/src/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/libnoise_a-latlon.$(OBJEXT):  \
+	deps/libnoise/src/$(am__dirstamp) \
+	deps/libnoise/src/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/libnoise_a-noisegen.$(OBJEXT):  \
+	deps/libnoise/src/$(am__dirstamp) \
+	deps/libnoise/src/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/model/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src/model
+	@: > deps/libnoise/src/model/$(am__dirstamp)
+deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) deps/libnoise/src/model/$(DEPDIR)
+	@: > deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/model/libnoise_a-sphere.$(OBJEXT):  \
+	deps/libnoise/src/model/$(am__dirstamp) \
+	deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/model/libnoise_a-plane.$(OBJEXT):  \
+	deps/libnoise/src/model/$(am__dirstamp) \
+	deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/model/libnoise_a-line.$(OBJEXT):  \
+	deps/libnoise/src/model/$(am__dirstamp) \
+	deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+deps/libnoise/src/model/libnoise_a-cylinder.$(OBJEXT):  \
+	deps/libnoise/src/model/$(am__dirstamp) \
+	deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+
+libnoise.a: $(libnoise_a_OBJECTS) $(libnoise_a_DEPENDENCIES) $(EXTRA_libnoise_a_DEPENDENCIES) 
+	$(AM_V_at)-rm -f libnoise.a
+	$(AM_V_AR)$(libnoise_a_AR) libnoise.a $(libnoise_a_OBJECTS) $(libnoise_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libnoise.a
 src/$(am__dirstamp):
 	@$(MKDIR_P) src
 	@: > src/$(am__dirstamp)
@@ -442,6 +699,10 @@ src/sudocraft-Weapon.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/sudocraft-Tool.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/sudocraft-WorldGen.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/sudocraft-World.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 sudocraft$(EXEEXT): $(sudocraft_OBJECTS) $(sudocraft_DEPENDENCIES) $(EXTRA_sudocraft_DEPENDENCIES) 
 	@rm -f sudocraft$(EXEEXT)
@@ -449,11 +710,49 @@ sudocraft$(EXEEXT): $(sudocraft_OBJECTS) $(sudocraft_DEPENDENCIES) $(EXTRA_sudoc
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
+	-rm -f deps/libnoise/src/*.$(OBJEXT)
+	-rm -f deps/libnoise/src/model/*.$(OBJEXT)
+	-rm -f deps/libnoise/src/module/*.$(OBJEXT)
 	-rm -f src/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Character.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Craft.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Game.Po@am__quote@ # am--include-marker
@@ -461,6 +760,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Item.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Tool.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-Weapon.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-World.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/sudocraft-WorldGen.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -483,6 +784,496 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+deps/libnoise/src/module/libnoise_a-abs.o: deps/libnoise/src/module/abs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-abs.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Tpo -c -o deps/libnoise/src/module/libnoise_a-abs.o `test -f 'deps/libnoise/src/module/abs.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/abs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/abs.cpp' object='deps/libnoise/src/module/libnoise_a-abs.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-abs.o `test -f 'deps/libnoise/src/module/abs.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/abs.cpp
+
+deps/libnoise/src/module/libnoise_a-abs.obj: deps/libnoise/src/module/abs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-abs.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Tpo -c -o deps/libnoise/src/module/libnoise_a-abs.obj `if test -f 'deps/libnoise/src/module/abs.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/abs.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/abs.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/abs.cpp' object='deps/libnoise/src/module/libnoise_a-abs.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-abs.obj `if test -f 'deps/libnoise/src/module/abs.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/abs.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/abs.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-add.o: deps/libnoise/src/module/add.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-add.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Tpo -c -o deps/libnoise/src/module/libnoise_a-add.o `test -f 'deps/libnoise/src/module/add.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/add.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/add.cpp' object='deps/libnoise/src/module/libnoise_a-add.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-add.o `test -f 'deps/libnoise/src/module/add.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/add.cpp
+
+deps/libnoise/src/module/libnoise_a-add.obj: deps/libnoise/src/module/add.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-add.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Tpo -c -o deps/libnoise/src/module/libnoise_a-add.obj `if test -f 'deps/libnoise/src/module/add.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/add.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/add.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/add.cpp' object='deps/libnoise/src/module/libnoise_a-add.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-add.obj `if test -f 'deps/libnoise/src/module/add.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/add.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/add.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-billow.o: deps/libnoise/src/module/billow.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-billow.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Tpo -c -o deps/libnoise/src/module/libnoise_a-billow.o `test -f 'deps/libnoise/src/module/billow.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/billow.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/billow.cpp' object='deps/libnoise/src/module/libnoise_a-billow.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-billow.o `test -f 'deps/libnoise/src/module/billow.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/billow.cpp
+
+deps/libnoise/src/module/libnoise_a-billow.obj: deps/libnoise/src/module/billow.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-billow.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Tpo -c -o deps/libnoise/src/module/libnoise_a-billow.obj `if test -f 'deps/libnoise/src/module/billow.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/billow.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/billow.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/billow.cpp' object='deps/libnoise/src/module/libnoise_a-billow.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-billow.obj `if test -f 'deps/libnoise/src/module/billow.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/billow.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/billow.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-blend.o: deps/libnoise/src/module/blend.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-blend.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Tpo -c -o deps/libnoise/src/module/libnoise_a-blend.o `test -f 'deps/libnoise/src/module/blend.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/blend.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/blend.cpp' object='deps/libnoise/src/module/libnoise_a-blend.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-blend.o `test -f 'deps/libnoise/src/module/blend.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/blend.cpp
+
+deps/libnoise/src/module/libnoise_a-blend.obj: deps/libnoise/src/module/blend.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-blend.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Tpo -c -o deps/libnoise/src/module/libnoise_a-blend.obj `if test -f 'deps/libnoise/src/module/blend.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/blend.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/blend.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/blend.cpp' object='deps/libnoise/src/module/libnoise_a-blend.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-blend.obj `if test -f 'deps/libnoise/src/module/blend.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/blend.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/blend.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-cache.o: deps/libnoise/src/module/cache.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-cache.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Tpo -c -o deps/libnoise/src/module/libnoise_a-cache.o `test -f 'deps/libnoise/src/module/cache.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/cache.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/cache.cpp' object='deps/libnoise/src/module/libnoise_a-cache.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-cache.o `test -f 'deps/libnoise/src/module/cache.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/cache.cpp
+
+deps/libnoise/src/module/libnoise_a-cache.obj: deps/libnoise/src/module/cache.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-cache.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Tpo -c -o deps/libnoise/src/module/libnoise_a-cache.obj `if test -f 'deps/libnoise/src/module/cache.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/cache.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/cache.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/cache.cpp' object='deps/libnoise/src/module/libnoise_a-cache.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-cache.obj `if test -f 'deps/libnoise/src/module/cache.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/cache.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/cache.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-checkerboard.o: deps/libnoise/src/module/checkerboard.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-checkerboard.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Tpo -c -o deps/libnoise/src/module/libnoise_a-checkerboard.o `test -f 'deps/libnoise/src/module/checkerboard.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/checkerboard.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/checkerboard.cpp' object='deps/libnoise/src/module/libnoise_a-checkerboard.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-checkerboard.o `test -f 'deps/libnoise/src/module/checkerboard.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/checkerboard.cpp
+
+deps/libnoise/src/module/libnoise_a-checkerboard.obj: deps/libnoise/src/module/checkerboard.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-checkerboard.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Tpo -c -o deps/libnoise/src/module/libnoise_a-checkerboard.obj `if test -f 'deps/libnoise/src/module/checkerboard.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/checkerboard.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/checkerboard.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/checkerboard.cpp' object='deps/libnoise/src/module/libnoise_a-checkerboard.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-checkerboard.obj `if test -f 'deps/libnoise/src/module/checkerboard.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/checkerboard.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/checkerboard.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-clamp.o: deps/libnoise/src/module/clamp.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-clamp.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Tpo -c -o deps/libnoise/src/module/libnoise_a-clamp.o `test -f 'deps/libnoise/src/module/clamp.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/clamp.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/clamp.cpp' object='deps/libnoise/src/module/libnoise_a-clamp.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-clamp.o `test -f 'deps/libnoise/src/module/clamp.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/clamp.cpp
+
+deps/libnoise/src/module/libnoise_a-clamp.obj: deps/libnoise/src/module/clamp.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-clamp.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Tpo -c -o deps/libnoise/src/module/libnoise_a-clamp.obj `if test -f 'deps/libnoise/src/module/clamp.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/clamp.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/clamp.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/clamp.cpp' object='deps/libnoise/src/module/libnoise_a-clamp.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-clamp.obj `if test -f 'deps/libnoise/src/module/clamp.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/clamp.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/clamp.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-const.o: deps/libnoise/src/module/const.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-const.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Tpo -c -o deps/libnoise/src/module/libnoise_a-const.o `test -f 'deps/libnoise/src/module/const.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/const.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/const.cpp' object='deps/libnoise/src/module/libnoise_a-const.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-const.o `test -f 'deps/libnoise/src/module/const.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/const.cpp
+
+deps/libnoise/src/module/libnoise_a-const.obj: deps/libnoise/src/module/const.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-const.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Tpo -c -o deps/libnoise/src/module/libnoise_a-const.obj `if test -f 'deps/libnoise/src/module/const.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/const.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/const.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/const.cpp' object='deps/libnoise/src/module/libnoise_a-const.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-const.obj `if test -f 'deps/libnoise/src/module/const.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/const.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/const.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-curve.o: deps/libnoise/src/module/curve.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-curve.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Tpo -c -o deps/libnoise/src/module/libnoise_a-curve.o `test -f 'deps/libnoise/src/module/curve.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/curve.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/curve.cpp' object='deps/libnoise/src/module/libnoise_a-curve.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-curve.o `test -f 'deps/libnoise/src/module/curve.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/curve.cpp
+
+deps/libnoise/src/module/libnoise_a-curve.obj: deps/libnoise/src/module/curve.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-curve.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Tpo -c -o deps/libnoise/src/module/libnoise_a-curve.obj `if test -f 'deps/libnoise/src/module/curve.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/curve.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/curve.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/curve.cpp' object='deps/libnoise/src/module/libnoise_a-curve.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-curve.obj `if test -f 'deps/libnoise/src/module/curve.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/curve.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/curve.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-cylinders.o: deps/libnoise/src/module/cylinders.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-cylinders.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Tpo -c -o deps/libnoise/src/module/libnoise_a-cylinders.o `test -f 'deps/libnoise/src/module/cylinders.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/cylinders.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/cylinders.cpp' object='deps/libnoise/src/module/libnoise_a-cylinders.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-cylinders.o `test -f 'deps/libnoise/src/module/cylinders.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/cylinders.cpp
+
+deps/libnoise/src/module/libnoise_a-cylinders.obj: deps/libnoise/src/module/cylinders.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-cylinders.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Tpo -c -o deps/libnoise/src/module/libnoise_a-cylinders.obj `if test -f 'deps/libnoise/src/module/cylinders.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/cylinders.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/cylinders.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/cylinders.cpp' object='deps/libnoise/src/module/libnoise_a-cylinders.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-cylinders.obj `if test -f 'deps/libnoise/src/module/cylinders.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/cylinders.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/cylinders.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-displace.o: deps/libnoise/src/module/displace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-displace.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Tpo -c -o deps/libnoise/src/module/libnoise_a-displace.o `test -f 'deps/libnoise/src/module/displace.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/displace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/displace.cpp' object='deps/libnoise/src/module/libnoise_a-displace.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-displace.o `test -f 'deps/libnoise/src/module/displace.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/displace.cpp
+
+deps/libnoise/src/module/libnoise_a-displace.obj: deps/libnoise/src/module/displace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-displace.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Tpo -c -o deps/libnoise/src/module/libnoise_a-displace.obj `if test -f 'deps/libnoise/src/module/displace.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/displace.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/displace.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/displace.cpp' object='deps/libnoise/src/module/libnoise_a-displace.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-displace.obj `if test -f 'deps/libnoise/src/module/displace.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/displace.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/displace.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-exponent.o: deps/libnoise/src/module/exponent.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-exponent.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Tpo -c -o deps/libnoise/src/module/libnoise_a-exponent.o `test -f 'deps/libnoise/src/module/exponent.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/exponent.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/exponent.cpp' object='deps/libnoise/src/module/libnoise_a-exponent.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-exponent.o `test -f 'deps/libnoise/src/module/exponent.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/exponent.cpp
+
+deps/libnoise/src/module/libnoise_a-exponent.obj: deps/libnoise/src/module/exponent.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-exponent.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Tpo -c -o deps/libnoise/src/module/libnoise_a-exponent.obj `if test -f 'deps/libnoise/src/module/exponent.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/exponent.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/exponent.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/exponent.cpp' object='deps/libnoise/src/module/libnoise_a-exponent.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-exponent.obj `if test -f 'deps/libnoise/src/module/exponent.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/exponent.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/exponent.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-invert.o: deps/libnoise/src/module/invert.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-invert.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Tpo -c -o deps/libnoise/src/module/libnoise_a-invert.o `test -f 'deps/libnoise/src/module/invert.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/invert.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/invert.cpp' object='deps/libnoise/src/module/libnoise_a-invert.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-invert.o `test -f 'deps/libnoise/src/module/invert.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/invert.cpp
+
+deps/libnoise/src/module/libnoise_a-invert.obj: deps/libnoise/src/module/invert.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-invert.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Tpo -c -o deps/libnoise/src/module/libnoise_a-invert.obj `if test -f 'deps/libnoise/src/module/invert.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/invert.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/invert.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/invert.cpp' object='deps/libnoise/src/module/libnoise_a-invert.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-invert.obj `if test -f 'deps/libnoise/src/module/invert.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/invert.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/invert.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-max.o: deps/libnoise/src/module/max.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-max.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Tpo -c -o deps/libnoise/src/module/libnoise_a-max.o `test -f 'deps/libnoise/src/module/max.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/max.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/max.cpp' object='deps/libnoise/src/module/libnoise_a-max.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-max.o `test -f 'deps/libnoise/src/module/max.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/max.cpp
+
+deps/libnoise/src/module/libnoise_a-max.obj: deps/libnoise/src/module/max.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-max.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Tpo -c -o deps/libnoise/src/module/libnoise_a-max.obj `if test -f 'deps/libnoise/src/module/max.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/max.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/max.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/max.cpp' object='deps/libnoise/src/module/libnoise_a-max.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-max.obj `if test -f 'deps/libnoise/src/module/max.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/max.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/max.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-min.o: deps/libnoise/src/module/min.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-min.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Tpo -c -o deps/libnoise/src/module/libnoise_a-min.o `test -f 'deps/libnoise/src/module/min.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/min.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/min.cpp' object='deps/libnoise/src/module/libnoise_a-min.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-min.o `test -f 'deps/libnoise/src/module/min.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/min.cpp
+
+deps/libnoise/src/module/libnoise_a-min.obj: deps/libnoise/src/module/min.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-min.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Tpo -c -o deps/libnoise/src/module/libnoise_a-min.obj `if test -f 'deps/libnoise/src/module/min.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/min.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/min.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/min.cpp' object='deps/libnoise/src/module/libnoise_a-min.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-min.obj `if test -f 'deps/libnoise/src/module/min.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/min.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/min.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-modulebase.o: deps/libnoise/src/module/modulebase.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-modulebase.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Tpo -c -o deps/libnoise/src/module/libnoise_a-modulebase.o `test -f 'deps/libnoise/src/module/modulebase.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/modulebase.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/modulebase.cpp' object='deps/libnoise/src/module/libnoise_a-modulebase.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-modulebase.o `test -f 'deps/libnoise/src/module/modulebase.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/modulebase.cpp
+
+deps/libnoise/src/module/libnoise_a-modulebase.obj: deps/libnoise/src/module/modulebase.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-modulebase.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Tpo -c -o deps/libnoise/src/module/libnoise_a-modulebase.obj `if test -f 'deps/libnoise/src/module/modulebase.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/modulebase.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/modulebase.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/modulebase.cpp' object='deps/libnoise/src/module/libnoise_a-modulebase.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-modulebase.obj `if test -f 'deps/libnoise/src/module/modulebase.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/modulebase.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/modulebase.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-multiply.o: deps/libnoise/src/module/multiply.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-multiply.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Tpo -c -o deps/libnoise/src/module/libnoise_a-multiply.o `test -f 'deps/libnoise/src/module/multiply.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/multiply.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/multiply.cpp' object='deps/libnoise/src/module/libnoise_a-multiply.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-multiply.o `test -f 'deps/libnoise/src/module/multiply.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/multiply.cpp
+
+deps/libnoise/src/module/libnoise_a-multiply.obj: deps/libnoise/src/module/multiply.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-multiply.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Tpo -c -o deps/libnoise/src/module/libnoise_a-multiply.obj `if test -f 'deps/libnoise/src/module/multiply.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/multiply.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/multiply.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/multiply.cpp' object='deps/libnoise/src/module/libnoise_a-multiply.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-multiply.obj `if test -f 'deps/libnoise/src/module/multiply.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/multiply.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/multiply.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-perlin.o: deps/libnoise/src/module/perlin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-perlin.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Tpo -c -o deps/libnoise/src/module/libnoise_a-perlin.o `test -f 'deps/libnoise/src/module/perlin.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/perlin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/perlin.cpp' object='deps/libnoise/src/module/libnoise_a-perlin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-perlin.o `test -f 'deps/libnoise/src/module/perlin.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/perlin.cpp
+
+deps/libnoise/src/module/libnoise_a-perlin.obj: deps/libnoise/src/module/perlin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-perlin.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Tpo -c -o deps/libnoise/src/module/libnoise_a-perlin.obj `if test -f 'deps/libnoise/src/module/perlin.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/perlin.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/perlin.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/perlin.cpp' object='deps/libnoise/src/module/libnoise_a-perlin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-perlin.obj `if test -f 'deps/libnoise/src/module/perlin.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/perlin.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/perlin.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-power.o: deps/libnoise/src/module/power.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-power.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Tpo -c -o deps/libnoise/src/module/libnoise_a-power.o `test -f 'deps/libnoise/src/module/power.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/power.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/power.cpp' object='deps/libnoise/src/module/libnoise_a-power.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-power.o `test -f 'deps/libnoise/src/module/power.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/power.cpp
+
+deps/libnoise/src/module/libnoise_a-power.obj: deps/libnoise/src/module/power.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-power.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Tpo -c -o deps/libnoise/src/module/libnoise_a-power.obj `if test -f 'deps/libnoise/src/module/power.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/power.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/power.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/power.cpp' object='deps/libnoise/src/module/libnoise_a-power.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-power.obj `if test -f 'deps/libnoise/src/module/power.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/power.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/power.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-ridgedmulti.o: deps/libnoise/src/module/ridgedmulti.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-ridgedmulti.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Tpo -c -o deps/libnoise/src/module/libnoise_a-ridgedmulti.o `test -f 'deps/libnoise/src/module/ridgedmulti.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/ridgedmulti.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/ridgedmulti.cpp' object='deps/libnoise/src/module/libnoise_a-ridgedmulti.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-ridgedmulti.o `test -f 'deps/libnoise/src/module/ridgedmulti.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/ridgedmulti.cpp
+
+deps/libnoise/src/module/libnoise_a-ridgedmulti.obj: deps/libnoise/src/module/ridgedmulti.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-ridgedmulti.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Tpo -c -o deps/libnoise/src/module/libnoise_a-ridgedmulti.obj `if test -f 'deps/libnoise/src/module/ridgedmulti.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/ridgedmulti.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/ridgedmulti.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/ridgedmulti.cpp' object='deps/libnoise/src/module/libnoise_a-ridgedmulti.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-ridgedmulti.obj `if test -f 'deps/libnoise/src/module/ridgedmulti.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/ridgedmulti.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/ridgedmulti.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-rotatepoint.o: deps/libnoise/src/module/rotatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-rotatepoint.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-rotatepoint.o `test -f 'deps/libnoise/src/module/rotatepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/rotatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/rotatepoint.cpp' object='deps/libnoise/src/module/libnoise_a-rotatepoint.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-rotatepoint.o `test -f 'deps/libnoise/src/module/rotatepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/rotatepoint.cpp
+
+deps/libnoise/src/module/libnoise_a-rotatepoint.obj: deps/libnoise/src/module/rotatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-rotatepoint.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-rotatepoint.obj `if test -f 'deps/libnoise/src/module/rotatepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/rotatepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/rotatepoint.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/rotatepoint.cpp' object='deps/libnoise/src/module/libnoise_a-rotatepoint.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-rotatepoint.obj `if test -f 'deps/libnoise/src/module/rotatepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/rotatepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/rotatepoint.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-scalebias.o: deps/libnoise/src/module/scalebias.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-scalebias.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Tpo -c -o deps/libnoise/src/module/libnoise_a-scalebias.o `test -f 'deps/libnoise/src/module/scalebias.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/scalebias.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/scalebias.cpp' object='deps/libnoise/src/module/libnoise_a-scalebias.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-scalebias.o `test -f 'deps/libnoise/src/module/scalebias.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/scalebias.cpp
+
+deps/libnoise/src/module/libnoise_a-scalebias.obj: deps/libnoise/src/module/scalebias.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-scalebias.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Tpo -c -o deps/libnoise/src/module/libnoise_a-scalebias.obj `if test -f 'deps/libnoise/src/module/scalebias.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/scalebias.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/scalebias.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/scalebias.cpp' object='deps/libnoise/src/module/libnoise_a-scalebias.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-scalebias.obj `if test -f 'deps/libnoise/src/module/scalebias.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/scalebias.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/scalebias.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-scalepoint.o: deps/libnoise/src/module/scalepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-scalepoint.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-scalepoint.o `test -f 'deps/libnoise/src/module/scalepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/scalepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/scalepoint.cpp' object='deps/libnoise/src/module/libnoise_a-scalepoint.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-scalepoint.o `test -f 'deps/libnoise/src/module/scalepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/scalepoint.cpp
+
+deps/libnoise/src/module/libnoise_a-scalepoint.obj: deps/libnoise/src/module/scalepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-scalepoint.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-scalepoint.obj `if test -f 'deps/libnoise/src/module/scalepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/scalepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/scalepoint.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/scalepoint.cpp' object='deps/libnoise/src/module/libnoise_a-scalepoint.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-scalepoint.obj `if test -f 'deps/libnoise/src/module/scalepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/scalepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/scalepoint.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-select.o: deps/libnoise/src/module/select.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-select.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Tpo -c -o deps/libnoise/src/module/libnoise_a-select.o `test -f 'deps/libnoise/src/module/select.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/select.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/select.cpp' object='deps/libnoise/src/module/libnoise_a-select.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-select.o `test -f 'deps/libnoise/src/module/select.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/select.cpp
+
+deps/libnoise/src/module/libnoise_a-select.obj: deps/libnoise/src/module/select.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-select.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Tpo -c -o deps/libnoise/src/module/libnoise_a-select.obj `if test -f 'deps/libnoise/src/module/select.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/select.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/select.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/select.cpp' object='deps/libnoise/src/module/libnoise_a-select.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-select.obj `if test -f 'deps/libnoise/src/module/select.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/select.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/select.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-spheres.o: deps/libnoise/src/module/spheres.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-spheres.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Tpo -c -o deps/libnoise/src/module/libnoise_a-spheres.o `test -f 'deps/libnoise/src/module/spheres.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/spheres.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/spheres.cpp' object='deps/libnoise/src/module/libnoise_a-spheres.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-spheres.o `test -f 'deps/libnoise/src/module/spheres.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/spheres.cpp
+
+deps/libnoise/src/module/libnoise_a-spheres.obj: deps/libnoise/src/module/spheres.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-spheres.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Tpo -c -o deps/libnoise/src/module/libnoise_a-spheres.obj `if test -f 'deps/libnoise/src/module/spheres.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/spheres.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/spheres.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/spheres.cpp' object='deps/libnoise/src/module/libnoise_a-spheres.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-spheres.obj `if test -f 'deps/libnoise/src/module/spheres.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/spheres.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/spheres.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-terrace.o: deps/libnoise/src/module/terrace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-terrace.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Tpo -c -o deps/libnoise/src/module/libnoise_a-terrace.o `test -f 'deps/libnoise/src/module/terrace.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/terrace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/terrace.cpp' object='deps/libnoise/src/module/libnoise_a-terrace.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-terrace.o `test -f 'deps/libnoise/src/module/terrace.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/terrace.cpp
+
+deps/libnoise/src/module/libnoise_a-terrace.obj: deps/libnoise/src/module/terrace.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-terrace.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Tpo -c -o deps/libnoise/src/module/libnoise_a-terrace.obj `if test -f 'deps/libnoise/src/module/terrace.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/terrace.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/terrace.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/terrace.cpp' object='deps/libnoise/src/module/libnoise_a-terrace.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-terrace.obj `if test -f 'deps/libnoise/src/module/terrace.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/terrace.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/terrace.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-translatepoint.o: deps/libnoise/src/module/translatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-translatepoint.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-translatepoint.o `test -f 'deps/libnoise/src/module/translatepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/translatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/translatepoint.cpp' object='deps/libnoise/src/module/libnoise_a-translatepoint.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-translatepoint.o `test -f 'deps/libnoise/src/module/translatepoint.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/translatepoint.cpp
+
+deps/libnoise/src/module/libnoise_a-translatepoint.obj: deps/libnoise/src/module/translatepoint.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-translatepoint.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Tpo -c -o deps/libnoise/src/module/libnoise_a-translatepoint.obj `if test -f 'deps/libnoise/src/module/translatepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/translatepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/translatepoint.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/translatepoint.cpp' object='deps/libnoise/src/module/libnoise_a-translatepoint.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-translatepoint.obj `if test -f 'deps/libnoise/src/module/translatepoint.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/translatepoint.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/translatepoint.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-turbulence.o: deps/libnoise/src/module/turbulence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-turbulence.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Tpo -c -o deps/libnoise/src/module/libnoise_a-turbulence.o `test -f 'deps/libnoise/src/module/turbulence.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/turbulence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/turbulence.cpp' object='deps/libnoise/src/module/libnoise_a-turbulence.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-turbulence.o `test -f 'deps/libnoise/src/module/turbulence.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/turbulence.cpp
+
+deps/libnoise/src/module/libnoise_a-turbulence.obj: deps/libnoise/src/module/turbulence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-turbulence.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Tpo -c -o deps/libnoise/src/module/libnoise_a-turbulence.obj `if test -f 'deps/libnoise/src/module/turbulence.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/turbulence.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/turbulence.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/turbulence.cpp' object='deps/libnoise/src/module/libnoise_a-turbulence.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-turbulence.obj `if test -f 'deps/libnoise/src/module/turbulence.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/turbulence.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/turbulence.cpp'; fi`
+
+deps/libnoise/src/module/libnoise_a-voronoi.o: deps/libnoise/src/module/voronoi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-voronoi.o -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Tpo -c -o deps/libnoise/src/module/libnoise_a-voronoi.o `test -f 'deps/libnoise/src/module/voronoi.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/voronoi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/voronoi.cpp' object='deps/libnoise/src/module/libnoise_a-voronoi.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-voronoi.o `test -f 'deps/libnoise/src/module/voronoi.cpp' || echo '$(srcdir)/'`deps/libnoise/src/module/voronoi.cpp
+
+deps/libnoise/src/module/libnoise_a-voronoi.obj: deps/libnoise/src/module/voronoi.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/module/libnoise_a-voronoi.obj -MD -MP -MF deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Tpo -c -o deps/libnoise/src/module/libnoise_a-voronoi.obj `if test -f 'deps/libnoise/src/module/voronoi.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/voronoi.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/voronoi.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Tpo deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/module/voronoi.cpp' object='deps/libnoise/src/module/libnoise_a-voronoi.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/module/libnoise_a-voronoi.obj `if test -f 'deps/libnoise/src/module/voronoi.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/module/voronoi.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/module/voronoi.cpp'; fi`
+
+deps/libnoise/src/libnoise_a-latlon.o: deps/libnoise/src/latlon.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/libnoise_a-latlon.o -MD -MP -MF deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Tpo -c -o deps/libnoise/src/libnoise_a-latlon.o `test -f 'deps/libnoise/src/latlon.cpp' || echo '$(srcdir)/'`deps/libnoise/src/latlon.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Tpo deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/latlon.cpp' object='deps/libnoise/src/libnoise_a-latlon.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/libnoise_a-latlon.o `test -f 'deps/libnoise/src/latlon.cpp' || echo '$(srcdir)/'`deps/libnoise/src/latlon.cpp
+
+deps/libnoise/src/libnoise_a-latlon.obj: deps/libnoise/src/latlon.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/libnoise_a-latlon.obj -MD -MP -MF deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Tpo -c -o deps/libnoise/src/libnoise_a-latlon.obj `if test -f 'deps/libnoise/src/latlon.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/latlon.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/latlon.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Tpo deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/latlon.cpp' object='deps/libnoise/src/libnoise_a-latlon.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/libnoise_a-latlon.obj `if test -f 'deps/libnoise/src/latlon.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/latlon.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/latlon.cpp'; fi`
+
+deps/libnoise/src/libnoise_a-noisegen.o: deps/libnoise/src/noisegen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/libnoise_a-noisegen.o -MD -MP -MF deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Tpo -c -o deps/libnoise/src/libnoise_a-noisegen.o `test -f 'deps/libnoise/src/noisegen.cpp' || echo '$(srcdir)/'`deps/libnoise/src/noisegen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Tpo deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/noisegen.cpp' object='deps/libnoise/src/libnoise_a-noisegen.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/libnoise_a-noisegen.o `test -f 'deps/libnoise/src/noisegen.cpp' || echo '$(srcdir)/'`deps/libnoise/src/noisegen.cpp
+
+deps/libnoise/src/libnoise_a-noisegen.obj: deps/libnoise/src/noisegen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/libnoise_a-noisegen.obj -MD -MP -MF deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Tpo -c -o deps/libnoise/src/libnoise_a-noisegen.obj `if test -f 'deps/libnoise/src/noisegen.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/noisegen.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/noisegen.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Tpo deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/noisegen.cpp' object='deps/libnoise/src/libnoise_a-noisegen.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/libnoise_a-noisegen.obj `if test -f 'deps/libnoise/src/noisegen.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/noisegen.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/noisegen.cpp'; fi`
+
+deps/libnoise/src/model/libnoise_a-sphere.o: deps/libnoise/src/model/sphere.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-sphere.o -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Tpo -c -o deps/libnoise/src/model/libnoise_a-sphere.o `test -f 'deps/libnoise/src/model/sphere.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/sphere.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/sphere.cpp' object='deps/libnoise/src/model/libnoise_a-sphere.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-sphere.o `test -f 'deps/libnoise/src/model/sphere.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/sphere.cpp
+
+deps/libnoise/src/model/libnoise_a-sphere.obj: deps/libnoise/src/model/sphere.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-sphere.obj -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Tpo -c -o deps/libnoise/src/model/libnoise_a-sphere.obj `if test -f 'deps/libnoise/src/model/sphere.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/sphere.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/sphere.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/sphere.cpp' object='deps/libnoise/src/model/libnoise_a-sphere.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-sphere.obj `if test -f 'deps/libnoise/src/model/sphere.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/sphere.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/sphere.cpp'; fi`
+
+deps/libnoise/src/model/libnoise_a-plane.o: deps/libnoise/src/model/plane.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-plane.o -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Tpo -c -o deps/libnoise/src/model/libnoise_a-plane.o `test -f 'deps/libnoise/src/model/plane.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/plane.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/plane.cpp' object='deps/libnoise/src/model/libnoise_a-plane.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-plane.o `test -f 'deps/libnoise/src/model/plane.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/plane.cpp
+
+deps/libnoise/src/model/libnoise_a-plane.obj: deps/libnoise/src/model/plane.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-plane.obj -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Tpo -c -o deps/libnoise/src/model/libnoise_a-plane.obj `if test -f 'deps/libnoise/src/model/plane.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/plane.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/plane.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/plane.cpp' object='deps/libnoise/src/model/libnoise_a-plane.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-plane.obj `if test -f 'deps/libnoise/src/model/plane.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/plane.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/plane.cpp'; fi`
+
+deps/libnoise/src/model/libnoise_a-line.o: deps/libnoise/src/model/line.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-line.o -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Tpo -c -o deps/libnoise/src/model/libnoise_a-line.o `test -f 'deps/libnoise/src/model/line.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/line.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/line.cpp' object='deps/libnoise/src/model/libnoise_a-line.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-line.o `test -f 'deps/libnoise/src/model/line.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/line.cpp
+
+deps/libnoise/src/model/libnoise_a-line.obj: deps/libnoise/src/model/line.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-line.obj -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Tpo -c -o deps/libnoise/src/model/libnoise_a-line.obj `if test -f 'deps/libnoise/src/model/line.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/line.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/line.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/line.cpp' object='deps/libnoise/src/model/libnoise_a-line.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-line.obj `if test -f 'deps/libnoise/src/model/line.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/line.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/line.cpp'; fi`
+
+deps/libnoise/src/model/libnoise_a-cylinder.o: deps/libnoise/src/model/cylinder.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-cylinder.o -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Tpo -c -o deps/libnoise/src/model/libnoise_a-cylinder.o `test -f 'deps/libnoise/src/model/cylinder.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/cylinder.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/cylinder.cpp' object='deps/libnoise/src/model/libnoise_a-cylinder.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-cylinder.o `test -f 'deps/libnoise/src/model/cylinder.cpp' || echo '$(srcdir)/'`deps/libnoise/src/model/cylinder.cpp
+
+deps/libnoise/src/model/libnoise_a-cylinder.obj: deps/libnoise/src/model/cylinder.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT deps/libnoise/src/model/libnoise_a-cylinder.obj -MD -MP -MF deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Tpo -c -o deps/libnoise/src/model/libnoise_a-cylinder.obj `if test -f 'deps/libnoise/src/model/cylinder.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/cylinder.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/cylinder.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Tpo deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='deps/libnoise/src/model/cylinder.cpp' object='deps/libnoise/src/model/libnoise_a-cylinder.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libnoise_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o deps/libnoise/src/model/libnoise_a-cylinder.obj `if test -f 'deps/libnoise/src/model/cylinder.cpp'; then $(CYGPATH_W) 'deps/libnoise/src/model/cylinder.cpp'; else $(CYGPATH_W) '$(srcdir)/deps/libnoise/src/model/cylinder.cpp'; fi`
 
 src/sudocraft-Game.o: src/Game.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT src/sudocraft-Game.o -MD -MP -MF src/$(DEPDIR)/sudocraft-Game.Tpo -c -o src/sudocraft-Game.o `test -f 'src/Game.cpp' || echo '$(srcdir)/'`src/Game.cpp
@@ -581,6 +1372,34 @@ src/sudocraft-Tool.obj: src/Tool.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/Tool.cpp' object='src/sudocraft-Tool.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o src/sudocraft-Tool.obj `if test -f 'src/Tool.cpp'; then $(CYGPATH_W) 'src/Tool.cpp'; else $(CYGPATH_W) '$(srcdir)/src/Tool.cpp'; fi`
+
+src/sudocraft-WorldGen.o: src/WorldGen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT src/sudocraft-WorldGen.o -MD -MP -MF src/$(DEPDIR)/sudocraft-WorldGen.Tpo -c -o src/sudocraft-WorldGen.o `test -f 'src/WorldGen.cpp' || echo '$(srcdir)/'`src/WorldGen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/sudocraft-WorldGen.Tpo src/$(DEPDIR)/sudocraft-WorldGen.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/WorldGen.cpp' object='src/sudocraft-WorldGen.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o src/sudocraft-WorldGen.o `test -f 'src/WorldGen.cpp' || echo '$(srcdir)/'`src/WorldGen.cpp
+
+src/sudocraft-WorldGen.obj: src/WorldGen.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT src/sudocraft-WorldGen.obj -MD -MP -MF src/$(DEPDIR)/sudocraft-WorldGen.Tpo -c -o src/sudocraft-WorldGen.obj `if test -f 'src/WorldGen.cpp'; then $(CYGPATH_W) 'src/WorldGen.cpp'; else $(CYGPATH_W) '$(srcdir)/src/WorldGen.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/sudocraft-WorldGen.Tpo src/$(DEPDIR)/sudocraft-WorldGen.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/WorldGen.cpp' object='src/sudocraft-WorldGen.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o src/sudocraft-WorldGen.obj `if test -f 'src/WorldGen.cpp'; then $(CYGPATH_W) 'src/WorldGen.cpp'; else $(CYGPATH_W) '$(srcdir)/src/WorldGen.cpp'; fi`
+
+src/sudocraft-World.o: src/World.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT src/sudocraft-World.o -MD -MP -MF src/$(DEPDIR)/sudocraft-World.Tpo -c -o src/sudocraft-World.o `test -f 'src/World.cpp' || echo '$(srcdir)/'`src/World.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/sudocraft-World.Tpo src/$(DEPDIR)/sudocraft-World.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/World.cpp' object='src/sudocraft-World.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o src/sudocraft-World.o `test -f 'src/World.cpp' || echo '$(srcdir)/'`src/World.cpp
+
+src/sudocraft-World.obj: src/World.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT src/sudocraft-World.obj -MD -MP -MF src/$(DEPDIR)/sudocraft-World.Tpo -c -o src/sudocraft-World.obj `if test -f 'src/World.cpp'; then $(CYGPATH_W) 'src/World.cpp'; else $(CYGPATH_W) '$(srcdir)/src/World.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/sudocraft-World.Tpo src/$(DEPDIR)/sudocraft-World.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/World.cpp' object='src/sudocraft-World.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sudocraft_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o src/sudocraft-World.obj `if test -f 'src/World.cpp'; then $(CYGPATH_W) 'src/World.cpp'; else $(CYGPATH_W) '$(srcdir)/src/World.cpp'; fi`
 install-dist_docDATA: $(dist_doc_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
@@ -856,7 +1675,7 @@ distcleancheck: distclean
 	       exit 1; } >&2
 check-am: all-am
 check: check-am
-all-am: Makefile $(PROGRAMS) $(DATA) $(HEADERS) config.h
+all-am: Makefile $(PROGRAMS) $(LIBRARIES) $(DATA) $(HEADERS) config.h
 installdirs:
 	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(docdir)" "$(DESTDIR)$(includedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
@@ -887,6 +1706,12 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-rm -f deps/libnoise/src/$(DEPDIR)/$(am__dirstamp)
+	-rm -f deps/libnoise/src/$(am__dirstamp)
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/$(am__dirstamp)
+	-rm -f deps/libnoise/src/model/$(am__dirstamp)
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/$(am__dirstamp)
+	-rm -f deps/libnoise/src/module/$(am__dirstamp)
 	-rm -f src/$(DEPDIR)/$(am__dirstamp)
 	-rm -f src/$(am__dirstamp)
 
@@ -895,17 +1720,55 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+clean-am: clean-binPROGRAMS clean-generic clean-noinstLIBRARIES \
+	mostlyclean-am
 
 distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-		-rm -f src/$(DEPDIR)/sudocraft-Character.Po
+		-rm -f deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po
+	-rm -f deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po
+	-rm -f src/$(DEPDIR)/sudocraft-Character.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Craft.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Game.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Inventory.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Item.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Tool.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Weapon.Po
+	-rm -f src/$(DEPDIR)/sudocraft-World.Po
+	-rm -f src/$(DEPDIR)/sudocraft-WorldGen.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -953,13 +1816,50 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-		-rm -f src/$(DEPDIR)/sudocraft-Character.Po
+		-rm -f deps/libnoise/src/$(DEPDIR)/libnoise_a-latlon.Po
+	-rm -f deps/libnoise/src/$(DEPDIR)/libnoise_a-noisegen.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-cylinder.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-line.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-plane.Po
+	-rm -f deps/libnoise/src/model/$(DEPDIR)/libnoise_a-sphere.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-abs.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-add.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-billow.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-blend.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cache.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-checkerboard.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-clamp.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-const.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-curve.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-cylinders.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-displace.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-exponent.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-invert.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-max.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-min.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-modulebase.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-multiply.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-perlin.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-power.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-ridgedmulti.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-rotatepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalebias.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-scalepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-select.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-spheres.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-terrace.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-translatepoint.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-turbulence.Po
+	-rm -f deps/libnoise/src/module/$(DEPDIR)/libnoise_a-voronoi.Po
+	-rm -f src/$(DEPDIR)/sudocraft-Character.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Craft.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Game.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Inventory.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Item.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Tool.Po
 	-rm -f src/$(DEPDIR)/sudocraft-Weapon.Po
+	-rm -f src/$(DEPDIR)/sudocraft-World.Po
+	-rm -f src/$(DEPDIR)/sudocraft-WorldGen.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -982,21 +1882,22 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dist_docDATA \
 
 .PHONY: CTAGS GTAGS TAGS all all-am am--depfiles am--refresh check \
 	check-am clean clean-binPROGRAMS clean-cscope clean-generic \
-	cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 \
-	dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip \
-	dist-zstd distcheck distclean distclean-compile \
-	distclean-generic distclean-hdr distclean-tags distcleancheck \
-	distdir distuninstallcheck dvi dvi-am html html-am info \
-	info-am install install-am install-binPROGRAMS install-data \
-	install-data-am install-dist_docDATA install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-includeHEADERS install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-binPROGRAMS uninstall-dist_docDATA \
+	clean-noinstLIBRARIES cscope cscopelist-am ctags ctags-am dist \
+	dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ \
+	dist-xz dist-zip dist-zstd distcheck distclean \
+	distclean-compile distclean-generic distclean-hdr \
+	distclean-tags distcleancheck distdir distuninstallcheck dvi \
+	dvi-am html html-am info info-am install install-am \
+	install-binPROGRAMS install-data install-data-am \
+	install-dist_docDATA install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am \
+	install-includeHEADERS install-info install-info-am \
+	install-man install-pdf install-pdf-am install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
+	ps ps-am tags tags-am uninstall uninstall-am \
+	uninstall-binPROGRAMS uninstall-dist_docDATA \
 	uninstall-includeHEADERS
 
 .PRECIOUS: Makefile
