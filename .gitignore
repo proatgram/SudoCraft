@@ -162,3 +162,6 @@ bin/
 
 # Temparary Files
 autom4te.cache/*
+
+# Directories
+libs

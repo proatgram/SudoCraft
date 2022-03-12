@@ -8,13 +8,13 @@
 
 class World {
 public:
-	World(int size_x, int size_y);
+	World(int size_x, int size_y, int seed);
 
 private:
 	int m_size_x;
 	int m_size_y;
-	float m_heightMap;
 	WorldGeneration m_generate;
+	float m_heightMap;
 	struct m_blockData {
 		unsigned short int blockType;
 		std::string nbtData;
