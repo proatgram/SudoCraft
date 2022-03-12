@@ -8,21 +8,22 @@
 
 class World {
 public:
-	World(int size_x, int size_y, int seed);
+	struct BlockDataStruct {
+		signed short int coordSign;
+		unsigned short int blockType;
+		std::string nbtData;
+	};
+
+	World(int size_x, int size_y, int size_z, int seed);
+
+	BlockDataStruct getBlock(int x, int y, int z);
 
 private:
 	int m_size_x;
 	int m_size_y;
+	int m_size_z;
 	WorldGeneration m_generate;
-	float m_heightMap;
-	struct m_blockData {
-		unsigned short int blockType;
-		std::string nbtData;
-	};
-	std::vector<m_blockData> m_blocksPositive_y;
-	std::vector<m_blockData> m_blocksPositive_x;
-	std::vector<m_blockData> m_blocksNegative_y;
-	std::vector<m_blockData> m_blocksNegative_x;
+	BlockDataStruct m_blocks[][][][];
 };
 
 #endif
