@@ -12,6 +12,7 @@
 #include "Craft.h"
 #include "SafeData.hpp"
 #include "GameUI.h"
+#include "World.h"
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)
@@ -60,5 +61,6 @@ int main() {
 	Azdelth.inventory->addItem(weapon);
 	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
-
+	World world(16, 16, 16, 1123, 1234, 4321);
+	world.getBlock(0, 0, 0);
 }
