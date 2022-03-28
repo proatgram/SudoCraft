@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/multiply.h"
+#include "multiply.h"
 
 using namespace noise::module;
 

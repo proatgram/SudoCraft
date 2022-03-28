@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/translatepoint.h"
+#include "translatepoint.h"
 
 using namespace noise::module;
 

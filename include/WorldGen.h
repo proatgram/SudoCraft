@@ -11,7 +11,7 @@ public:
 	WorldGeneration(int seed);
 
 	int getSeed();
-	float generate(int x, int y, int z);
+	float generate(double x, double y, double z);
 private:
 	noise::module::Perlin m_perlinNoise;
 };

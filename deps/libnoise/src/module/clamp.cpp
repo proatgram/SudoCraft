@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/clamp.h"
+#include "clamp.h"
 
 using namespace noise::module;
 

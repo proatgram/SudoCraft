@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/ridgedmulti.h"
+#include "ridgedmulti.h"
 
 using namespace noise::module;
 

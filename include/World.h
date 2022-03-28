@@ -21,6 +21,7 @@ private:
 	int m_size_y;
 	int m_size_z;
 	WorldGeneration m_heightGenerate;
+	WorldGeneration m_biomeGenerate;
 	WorldGeneration m_blockGenerate;
 	std::vector<std::vector<std::vector<std::vector<std::pair<std::tuple<int, int, int>, float>>>>> m_heightMap;
 	std::vector<std::vector<std::vector<std::vector<std::pair<std::tuple<int, int, int>, float>>>>> m_biomeMap;

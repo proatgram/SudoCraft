@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/turbulence.h"
+#include "turbulence.h"
 
 using namespace noise::module;
 

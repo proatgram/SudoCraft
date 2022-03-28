@@ -20,7 +20,7 @@
 // off every 'zig'.)
 //
 
-#include "module/checkerboard.h"
+#include "checkerboard.h"
 
 using namespace noise::module;
 

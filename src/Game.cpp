@@ -61,6 +61,17 @@ int main() {
 	Azdelth.inventory->addItem(weapon);
 	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
-	World world(16, 16, 16, 1123, 1234, 4321);
-	world.getBlock(0, 0, 0);
+	World world(17, 17, 17, 11231212, 12342341, 4321234);
+	//world.getBlock(12, 12, 12);
+	
+	
+	for (int x = 0; x < 1000; x++) {
+		for (int y = 0; y < 1000; y++) {
+			for (int z = 0; z < 1000; z++) {
+				printf("X: %d, Y: %d, Z: %d\n", x, y, z);
+				world.getBlock(z, y, z);
+			}
+		}
+	}
+	
 }

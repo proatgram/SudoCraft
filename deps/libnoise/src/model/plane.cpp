@@ -19,7 +19,7 @@
 // The developer's email is ojacobson@lionsanctuary.net
 //
 
-#include "model/plane.h"
+#include "plane.h"
 
 using namespace noise;
 using namespace noise::model;

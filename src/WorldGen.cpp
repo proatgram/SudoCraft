@@ -13,7 +13,6 @@ int WorldGeneration::getSeed() {
 	return m_perlinNoise.GetSeed();
 }
 
-float WorldGeneration::generate(int x, int y, int z) {
-	
+float WorldGeneration::generate(double x, double y, double z) {
 	return m_perlinNoise.GetValue(x, y, z);
 }

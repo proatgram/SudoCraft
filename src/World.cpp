@@ -5,12 +5,14 @@
 #include "World.h"
 #include "Utils.h"
 #include "Blocks.h"
+#include "noise/noise.h"
 
 World::World(int size_x, int size_y, int size_z, int worldSeed, int biomeSeed, int blockSeed) :
 	m_size_x(size_x),
 	m_size_y(size_y),
 	m_size_z(size_z),
 	m_heightGenerate(worldSeed),
+	m_biomeGenerate(biomeSeed),
 	m_blockGenerate(blockSeed)
 {
 
@@ -20,37 +22,72 @@ World::World(int size_x, int size_y, int size_z, int worldSeed, int biomeSeed, i
 
 BlockDataStruct World::getBlock(int x, int y, int z) {
 	unsigned int location = 0;
-
-	if (m_blocks[abs(x)][abs(y)][abs(z)].size() != 0) {
-		for (unsigned long int times = 0; times < m_blocks[abs(x)][abs(y)][abs(z)].size(); times++) {
-			if (m_blocks[abs(x)][abs(y)][abs(z)].at(times).x == x && m_blocks[abs(x)][abs(y)][abs(z)].at(times).y == y && m_blocks[abs(x)][abs(y)][abs(z)].at(times).z == z) {
-				return m_blocks[abs(x)][abs(y)][abs(z)].at(times);
+	if (m_blocks.size() != 0) {
+		if (m_blocks[abs(x)].size() != 0) {
+			if (m_blocks[abs(x)][abs(y)].size() != 0) {
+				if (m_blocks[abs(x)][abs(y)][abs(z)].size() != 0) {
+					for (unsigned long int times = 0; times < m_blocks[abs(x)][abs(y)][abs(z)].size(); times++) {
+						if (m_blocks[abs(x)][abs(y)][abs(z)].at(times).x == x && m_blocks[abs(x)][abs(y)][abs(z)].at(times).y == y && m_blocks[abs(x)][abs(y)][abs(z)].at(times).z == z) {
+							return m_blocks[abs(x)][abs(y)][abs(z)].at(times);
+						}
+					}
+				}
 			}
 		}
-		m_heightMap[abs(x)][abs(y)][abs(z)].push_back(std::make_pair(std::make_tuple(x, y, z), m_heightGenerate.generate(x, y, z)));
-
-		for (unsigned int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
-			if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
-				location = times;
-			}
-		}
-
-		if (Utils::Math::inRange(Utils::BiomeConstraints::oceanMin, Utils::BiomeConstraints::oceanMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(location).second)) {
-			m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
-		}
-
-		if (Utils::Math::inRange(Utils::BiomeConstraints::desertMin, Utils::BiomeConstraints::desertMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(location).second)) {
-			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::gravel::min, Utils::BiomeBlockConstraints::desert::gravel::max, m_blockGenerate.generate(x, y, z))) {
-				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
-			}
-			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::sand::min, Utils::BiomeBlockConstraints::desert::sand::max, m_blockGenerate.generate(x, y, z))) {
-				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "\n"));
-			}
-		}
-	
-
 	}
 	else {
+		// Generates height map for coordinate
+
+		m_heightMap.resize(abs(x));
+		m_heightMap.emplace(m_heightMap.begin() + abs(x));
+		m_heightMap[abs(x)].resize(abs(y));
+		m_heightMap[abs(x)].emplace(m_heightMap[abs(x)].begin() + abs(y));
+		m_heightMap[abs(x)][abs(y)].resize(abs(z));
+		m_heightMap[abs(x)][abs(y)].emplace(m_heightMap[abs(x)][abs(y)].begin() + abs(z));
+
+		std::tuple<int, int, int> coords = std::make_tuple(x, y, z);
+		float height = m_heightGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0);
+g		std::pair<std::tuple<int, int, int>, float> heightPair = std::make_pair(coords, height);
+		m_heightMap[abs(x)][abs(y)][abs(z)].push_back(heightPair);
+
+		// Generates biome map for coordinate based off coordinate. A maybe
+
+		m_biomeMap.resize(abs(x));
+		m_biomeMap.emplace(m_biomeMap.begin() + abs(x));
+		m_biomeMap[abs(x)].resize(abs(y));
+		m_biomeMap[abs(x)].emplace(m_biomeMap[abs(x)].begin() + abs(y));
+		m_biomeMap[abs(x)][abs(y)].resize(abs(z));
+		m_biomeMap[abs(x)][abs(y)].emplace(m_biomeMap[abs(x)][abs(y)].begin() + abs(z));
+		
+		float biome = m_biomeGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0);
+		std::pair<std::tuple<int, int, int>, float> biomePair = std::make_pair(coords, biome);
+		m_biomeMap[abs(x)][abs(y)][abs(z)].push_back(biomePair);
+
+		// Generates block map based off height map and coordinate
+
+		m_blocks.resize(abs(x));
+		m_blocks.emplace(m_blocks.begin() + abs(x));
+		m_blocks[abs(x)].resize(abs(y));
+		m_blocks[abs(x)].emplace(m_blocks[abs(x)].begin() + abs(y));
+		m_blocks[abs(x)][abs(y)].resize(abs(z));
+		m_blocks[abs(x)][abs(y)].emplace(m_blocks[abs(x)][abs(y)].begin() + abs(z));
+		int heightIndex;
+		for (int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
+			if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
+				heightIndex = times;
+			}
+		}
+
+		if (Utils::Math::inRange(Utils::BiomeConstraints::desertMin, Utils::BiomeConstraints::desertMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::gravel::min, Utils::BiomeBlockConstraints::desert::gravel::max, m_blockGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0))) {
+				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
+			}
+			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::sand::min, Utils::BiomeBlockConstraints::desert::sand::max, m_blockGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0))) {
+				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "\n"));
+			}
+			printf("%s", m_blocks[abs(x)][abs(y)][abs(z)].at(0).block.name.c_str());
+		}
 
 	}
+	return BlockDataStruct(1, 1, 1, Blocks::sand, "\n");
 }
