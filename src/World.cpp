@@ -22,10 +22,10 @@ World::World(int size_x, int size_y, int size_z, int worldSeed, int biomeSeed, i
 
 BlockDataStruct World::getBlock(int x, int y, int z) {
 	unsigned int location = 0;
-	if (m_blocks.size() != 0) {
-		if (m_blocks[abs(x)].size() != 0) {
-			if (m_blocks[abs(x)][abs(y)].size() != 0) {
-				if (m_blocks[abs(x)][abs(y)][abs(z)].size() != 0) {
+	if (m_blocks.size() > abs(x)) {
+		if (m_blocks[abs(x)].size() > abs(y)) {
+			if (m_blocks[abs(x)][abs(y)].size() > abs(z)) {
+				if (m_blocks[abs(x)][abs(y)][abs(z)].size() > 0) {
 					for (unsigned long int times = 0; times < m_blocks[abs(x)][abs(y)][abs(z)].size(); times++) {
 						if (m_blocks[abs(x)][abs(y)][abs(z)].at(times).x == x && m_blocks[abs(x)][abs(y)][abs(z)].at(times).y == y && m_blocks[abs(x)][abs(y)][abs(z)].at(times).z == z) {
 							return m_blocks[abs(x)][abs(y)][abs(z)].at(times);
@@ -37,40 +37,56 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 	}
 	else {
 		// Generates height map for coordinate
-
-		m_heightMap.resize(abs(x));
+		if (m_heightMap.size() < abs(x)) {
+			m_heightMap.resize(abs(x));
+		}
 		m_heightMap.emplace(m_heightMap.begin() + abs(x));
-		m_heightMap[abs(x)].resize(abs(y));
+		if (m_heightMap[abs(x)].size() < abs(y)) {
+			m_heightMap[abs(x)].resize(abs(y));
+		}
 		m_heightMap[abs(x)].emplace(m_heightMap[abs(x)].begin() + abs(y));
-		m_heightMap[abs(x)][abs(y)].resize(abs(z));
+		if (m_heightMap[abs(x)][abs(y)].size() < abs(z)) {
+			m_heightMap[abs(x)][abs(y)].resize(abs(z));
+		}
 		m_heightMap[abs(x)][abs(y)].emplace(m_heightMap[abs(x)][abs(y)].begin() + abs(z));
 
 		std::tuple<int, int, int> coords = std::make_tuple(x, y, z);
 		float height = m_heightGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0);
-g		std::pair<std::tuple<int, int, int>, float> heightPair = std::make_pair(coords, height);
+ 		std::pair<std::tuple<int, int, int>, float> heightPair = std::make_pair(coords, height);
 		m_heightMap[abs(x)][abs(y)][abs(z)].push_back(heightPair);
 
 		// Generates biome map for coordinate based off coordinate. A maybe
-
-		m_biomeMap.resize(abs(x));
+		if (m_biomeMap.size() < abs(x)) {
+			m_biomeMap.resize(abs(x));
+		}
 		m_biomeMap.emplace(m_biomeMap.begin() + abs(x));
-		m_biomeMap[abs(x)].resize(abs(y));
+		if (m_biomeMap[abs(x)].size() < abs(y)) {
+			m_biomeMap[abs(x)].resize(abs(y));
+		}
+
 		m_biomeMap[abs(x)].emplace(m_biomeMap[abs(x)].begin() + abs(y));
-		m_biomeMap[abs(x)][abs(y)].resize(abs(z));
+		if (m_biomeMap[abs(x)][abs(y)].size() < abs(z)) {
+			m_biomeMap[abs(x)][abs(y)].resize(abs(z));
+		}
 		m_biomeMap[abs(x)][abs(y)].emplace(m_biomeMap[abs(x)][abs(y)].begin() + abs(z));
-		
 		float biome = m_biomeGenerate.generate(x / 1000.0, y / 1000.0, z / 1000.0);
 		std::pair<std::tuple<int, int, int>, float> biomePair = std::make_pair(coords, biome);
 		m_biomeMap[abs(x)][abs(y)][abs(z)].push_back(biomePair);
 
 		// Generates block map based off height map and coordinate
-
-		m_blocks.resize(abs(x));
+		if (m_blocks.size() < abs(x)) {
+			m_blocks.resize(abs(x));
+		}
 		m_blocks.emplace(m_blocks.begin() + abs(x));
-		m_blocks[abs(x)].resize(abs(y));
+		if (m_blocks[abs(x)].size() < abs(y)) {
+			m_blocks[abs(x)].resize(abs(y));
+		}
 		m_blocks[abs(x)].emplace(m_blocks[abs(x)].begin() + abs(y));
-		m_blocks[abs(x)][abs(y)].resize(abs(z));
+		if (m_blocks[abs(x)][abs(y)].size() < abs(z)) {
+			m_blocks[abs(x)][abs(y)].resize(abs(z));
+		}
 		m_blocks[abs(x)][abs(y)].emplace(m_blocks[abs(x)][abs(y)].begin() + abs(z));
+		// Sorts through the X, Y, and Z coordinate vector for the specific signed coordinate.
 		int heightIndex;
 		for (int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
 			if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
