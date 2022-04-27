@@ -68,8 +68,7 @@ int main() {
 	for (int x = 0; x < 1000; x++) {
 		for (int y = 0; y < 1000; y++) {
 			for (int z = 0; z < 1000; z++) {
-				printf("X: %d, Y: %d, Z: %d\n", x, y, z);
-				world.getBlock(z, y, z);
+				world.getBlock(x, y, z);
 			}
 		}
 	}
