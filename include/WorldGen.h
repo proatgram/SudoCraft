@@ -3,8 +3,8 @@
 
 #include "noise/noise.h"
 
-#ifndef __WORLD_GEN__
-#define __WORLD_GEN__
+#ifndef __WORLD_GEN_H__
+#define __WORLD_GEN_H__
 
 class WorldGeneration {
 public:
