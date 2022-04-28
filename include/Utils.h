@@ -84,6 +84,71 @@ public:
 				static float max;
 			};
 		};
+		struct tundra {
+			struct snowyGrass {
+				static float min;
+				static float max;
+			};
+			struct ice {
+
+				static float min;
+				static float max;
+
+				struct normalIce {
+					static float min;
+					static float max;
+				};
+				struct packedIce {
+					static float min;
+					static float max;
+				};
+			};
+			struct snow {
+				static float min;
+				static float max;
+
+				struct normalSnow {
+					static float min;
+					static float max;
+				};
+				struct packedSnow {
+					static float min;
+					static float max;
+				};
+			};
+		};
+		struct mountain {
+			struct normal {
+				static float min;
+				static float max;
+
+				struct rocks {
+					static float min;
+					static float max;
+				};
+				struct gravel {
+					static float min;
+					static float max;
+				};
+			};
+			struct snowyGrass {
+				static float min;
+				static float max;
+			};
+			struct snow {
+				static float min;
+				static float max;
+
+				struct regularSnow {
+					static float min;
+					static float max;
+				};
+				struct packedSnow {
+					static float min;
+					static float max;
+				};
+			};
+		};
 	};
 	struct Math {
 		static bool inRange(float min, float max, float val);

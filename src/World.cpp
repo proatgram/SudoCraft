@@ -37,55 +37,101 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 					}
 				}
 				else {
+					// Sorts through the X, Y, and Z coordinate vector for the specific signed coordinate.
 					int heightIndex;
 					for (int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
 						if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
 							heightIndex = times;
 						}
 					}
+					int biomeIndex;
+					for (int times = 0; times < m_biomeMap[abs(x)][abs(y)][abs(z)].size(); times++) {
+						if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
+							biomeIndex = times;
+						}
+					}
 					float gen = m_blockGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
 					if (Utils::Math::inRange(Utils::BiomeConstraints::desertMin, Utils::BiomeConstraints::desertMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
-						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::gravel::min, Utils::BiomeBlockConstraints::desert::gravel::max, m_blockGenerate.generate(x / 200 + 0.1 , y / 200 + 0.1, z / 200 + 0.1))) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "Biome: Desert;"));
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::gravel::min, Utils::BiomeBlockConstraints::desert::gravel::max, gen)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::sand::min, Utils::BiomeBlockConstraints::desert::sand::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "Biome: Desert;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "\n"));
 						}
 					}
 					else if (Utils::Math::inRange(Utils::BiomeConstraints::jungleMin,Utils::BiomeConstraints::jungleMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
 						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::jungle::water::min, Utils::BiomeBlockConstraints::jungle::water::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "Biome: Jungle;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::jungle::sand::min, Utils::BiomeBlockConstraints::jungle::sand::max, gen)){
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "Biome: Jungle;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::jungle::grass::min, Utils::BiomeBlockConstraints::jungle::grass::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::grass, "Biome: Jungle;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::grass, "\n"));
 						}
 					}
 					else if (Utils::Math::inRange(Utils::BiomeConstraints::plainsMin, Utils::BiomeConstraints::plainsMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
 						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::plains::water::min, Utils::BiomeBlockConstraints::plains::water::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "Biome: Plains;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::plains::sand::min, Utils::BiomeBlockConstraints::plains::sand::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "Biome: Plains;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::sand, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::plains::gravel::min, Utils::BiomeBlockConstraints::plains::gravel::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "Biome: Plains;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::plains::grass::min, Utils::BiomeBlockConstraints::plains::grass::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::grass, "Biome: Plains;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::grass, "\n"));
 						}
 					}
 					else if (Utils::Math::inRange(Utils::BiomeConstraints::oceanMin, Utils::BiomeConstraints::oceanMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
 						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::ocean::water::min, Utils::BiomeBlockConstraints::ocean::water::max, gen)) {
-							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "Biome: Ocean;"));
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::ocean::gravel::min, Utils::BiomeBlockConstraints::ocean::gravel::max, gen)) {
 							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 						}
 						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::ocean::sand::min, Utils::BiomeBlockConstraints::ocean::sand::max, gen)) {
 							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
+						}
+					}
+					else if (Utils::Math::inRange(Utils::BiomeConstraints::tundraMin, Utils::BiomeConstraints::tundraMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::min, Utils::BiomeBlockConstraints::tundra::ice::max, gen)) {
+							if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::normalIce::min, Utils::BiomeBlockConstraints::tundra::ice::normalIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::ice, "\n"));
+							}
+							else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::packedIce::min, Utils::BiomeBlockConstraints::tundra::ice::packedIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedIce, "\n"));
+							}
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::min, Utils::BiomeBlockConstraints::tundra::snow::max, gen)) {
+							if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::normalSnow::min, Utils::BiomeBlockConstraints::tundra::snow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+							}
+							else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::packedSnow::min, Utils::BiomeBlockConstraints::tundra::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+							}
+						}
+					}
+					else if (Utils::Math::inRange(Utils::BiomeConstraints::mountainMin, Utils::BiomeConstraints::mountainMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::min, Utils::BiomeBlockConstraints::mountain::normal::max, gen)) {
+							if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::gravel::min, Utils::BiomeBlockConstraints::mountain::normal::gravel::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
+							}
+							else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::rocks::min, Utils::BiomeBlockConstraints::mountain::normal::rocks::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::rock, "\n"));
+							}
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snowyGrass::min, Utils::BiomeBlockConstraints::mountain::snowyGrass::max, gen)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snowyGrass, "\n"));
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::min, Utils::BiomeBlockConstraints::mountain::snow::max, gen)) {
+							if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::regularSnow::min, Utils::BiomeBlockConstraints::mountain::snow::regularSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+							}
+							else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::packedSnow::min, Utils::BiomeBlockConstraints::mountain::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+								m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+							}
 						}
 					}
 					std::printf(" %f", gen);
@@ -106,7 +152,7 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 					m_biomeMap[abs(x)][abs(y)].resize(abs(z));
 				}
 				m_biomeMap[abs(x)][abs(y)].emplace(m_biomeMap[abs(x)][abs(y)].begin() + abs(z));
-				float biome = m_biomeGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
+				float biome = m_biomeGenerate.generate(x / 10 + 0.1, y / 10 + 0.1, z / 10 + 0.1);
 				std::pair<std::tuple<int, int, int>, float> biomePair = std::make_pair(coords, biome);
 				m_biomeMap[abs(x)][abs(y)][abs(z)].push_back(biomePair);
 
@@ -119,6 +165,12 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 				for (int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
 					if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
 						heightIndex = times;
+					}
+				}
+				int biomeIndex;
+				for (int times = 0; times < m_biomeMap[abs(x)][abs(y)][abs(z)].size(); times++) {
+					if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
+						biomeIndex = times;
 					}
 				}
 				float gen = m_blockGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
@@ -166,6 +218,45 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 					}
 				}
+				else if (Utils::Math::inRange(Utils::BiomeConstraints::tundraMin, Utils::BiomeConstraints::tundraMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::min, Utils::BiomeBlockConstraints::tundra::ice::max, gen)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::normalIce::min, Utils::BiomeBlockConstraints::tundra::ice::normalIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::ice, "\n"));
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::packedIce::min, Utils::BiomeBlockConstraints::tundra::ice::packedIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedIce, "\n"));
+						}
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::min, Utils::BiomeBlockConstraints::tundra::snow::max, gen)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::normalSnow::min, Utils::BiomeBlockConstraints::tundra::snow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::packedSnow::min, Utils::BiomeBlockConstraints::tundra::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+						}
+					}
+				}
+				else if (Utils::Math::inRange(Utils::BiomeConstraints::mountainMin, Utils::BiomeConstraints::mountainMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::min, Utils::BiomeBlockConstraints::mountain::normal::max, gen)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::gravel::min, Utils::BiomeBlockConstraints::mountain::normal::gravel::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::rocks::min, Utils::BiomeBlockConstraints::mountain::normal::rocks::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::rock, "\n"));
+						}
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snowyGrass::min, Utils::BiomeBlockConstraints::mountain::snowyGrass::max, gen)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snowyGrass, "\n"));
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::min, Utils::BiomeBlockConstraints::mountain::snow::max, gen)) {
+						if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::regularSnow::min, Utils::BiomeBlockConstraints::mountain::snow::regularSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+						}
+						else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::packedSnow::min, Utils::BiomeBlockConstraints::mountain::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+							m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+						}
+					}
+				}
 				std::printf(" %f", gen);
 			}
 
@@ -195,7 +286,7 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 				m_biomeMap[abs(x)][abs(y)].resize(abs(z));
 			}
 			m_biomeMap[abs(x)][abs(y)].emplace(m_biomeMap[abs(x)][abs(y)].begin() + abs(z));
-			float biome = m_biomeGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
+			float biome = m_biomeGenerate.generate(x / 10 + 0.1, y / 10 + 0.1, z / 10 + 0.1);
 			std::pair<std::tuple<int, int, int>, float> biomePair = std::make_pair(coords, biome);
 			m_biomeMap[abs(x)][abs(y)][abs(z)].push_back(biomePair);
 
@@ -209,6 +300,12 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 			for (int times = 0; times < m_heightMap[abs(x)][abs(y)][abs(z)].size(); times++) {
 				if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
 					heightIndex = times;
+				}
+			}
+			int biomeIndex;
+			for (int times = 0; times < m_biomeMap[abs(x)][abs(y)][abs(z)].size(); times++) {
+				if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
+					biomeIndex = times;
 				}
 			}
 			float gen = m_blockGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
@@ -256,6 +353,45 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 				}
 			}
+			else if (Utils::Math::inRange(Utils::BiomeConstraints::tundraMin, Utils::BiomeConstraints::tundraMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::min, Utils::BiomeBlockConstraints::tundra::ice::max, gen)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::normalIce::min, Utils::BiomeBlockConstraints::tundra::ice::normalIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::ice, "\n"));
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::packedIce::min, Utils::BiomeBlockConstraints::tundra::ice::packedIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedIce, "\n"));
+					}
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::min, Utils::BiomeBlockConstraints::tundra::snow::max, gen)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::normalSnow::min, Utils::BiomeBlockConstraints::tundra::snow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::packedSnow::min, Utils::BiomeBlockConstraints::tundra::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+					}
+				}
+			}
+			else if (Utils::Math::inRange(Utils::BiomeConstraints::mountainMin, Utils::BiomeConstraints::mountainMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::min, Utils::BiomeBlockConstraints::mountain::normal::max, gen)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::gravel::min, Utils::BiomeBlockConstraints::mountain::normal::gravel::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::rocks::min, Utils::BiomeBlockConstraints::mountain::normal::rocks::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::rock, "\n"));
+					}
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snowyGrass::min, Utils::BiomeBlockConstraints::mountain::snowyGrass::max, gen)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snowyGrass, "\n"));
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::min, Utils::BiomeBlockConstraints::mountain::snow::max, gen)) {
+					if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::regularSnow::min, Utils::BiomeBlockConstraints::mountain::snow::regularSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+					}
+					else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::packedSnow::min, Utils::BiomeBlockConstraints::mountain::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+						m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+					}
+				}
+			}
 			std::printf(" %f", gen);
 		}
 	}
@@ -296,7 +432,7 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 			m_biomeMap[abs(x)][abs(y)].resize(abs(z));
 		}
 		m_biomeMap[abs(x)][abs(y)].emplace(m_biomeMap[abs(x)][abs(y)].begin() + abs(z));
-		float biome = m_biomeGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
+		float biome = m_biomeGenerate.generate(x / 10 + 0.1, y / 10 + 0.1, z / 10 + 0.1);
 		std::pair<std::tuple<int, int, int>, float> biomePair = std::make_pair(coords, biome);
 		m_biomeMap[abs(x)][abs(y)][abs(z)].push_back(biomePair);
 
@@ -320,7 +456,13 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 				heightIndex = times;
 			}
 		}
-		float gen = gen;
+		int biomeIndex;
+		for (int times = 0; times < m_biomeMap[abs(x)][abs(y)][abs(z)].size(); times++) {
+			if (std::get<0>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == x && std::get<1>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == y && std::get<2>(m_heightMap[abs(x)][abs(y)][abs(z)].at(times).first) == z) {
+				biomeIndex = times;
+			}
+		}
+		float gen = m_blockGenerate.generate(x / 200 + 0.1, y / 200 + 0.1, z / 200 + 0.1);
 		if (Utils::Math::inRange(Utils::BiomeConstraints::desertMin, Utils::BiomeConstraints::desertMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
 			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::desert::gravel::min, Utils::BiomeBlockConstraints::desert::gravel::max, gen)) {
 				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
@@ -365,8 +507,48 @@ BlockDataStruct World::getBlock(int x, int y, int z) {
 				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::water, "\n"));
 			}
 		}
+		else if (Utils::Math::inRange(Utils::BiomeConstraints::tundraMin, Utils::BiomeConstraints::tundraMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::min, Utils::BiomeBlockConstraints::tundra::ice::max, gen)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::normalIce::min, Utils::BiomeBlockConstraints::tundra::ice::normalIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::ice, "\n"));
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::ice::packedIce::min, Utils::BiomeBlockConstraints::tundra::ice::packedIce::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedIce, "\n"));
+				}
+			}
+			else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::min, Utils::BiomeBlockConstraints::tundra::snow::max, gen)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::normalSnow::min, Utils::BiomeBlockConstraints::tundra::snow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::tundra::snow::packedSnow::min, Utils::BiomeBlockConstraints::tundra::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+				}
+			}
+		}
+		else if (Utils::Math::inRange(Utils::BiomeConstraints::mountainMin, Utils::BiomeConstraints::mountainMax, m_heightMap[abs(x)][abs(y)][abs(z)].at(heightIndex).second)) {
+			if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::min, Utils::BiomeBlockConstraints::mountain::normal::max, gen)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::gravel::min, Utils::BiomeBlockConstraints::mountain::normal::gravel::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::gravel, "\n"));
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::normal::rocks::min, Utils::BiomeBlockConstraints::mountain::normal::rocks::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::rock, "\n"));
+				}
+			}
+			else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snowyGrass::min, Utils::BiomeBlockConstraints::mountain::snowyGrass::max, gen)) {
+				m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snowyGrass, "\n"));
+			}
+			else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::min, Utils::BiomeBlockConstraints::mountain::snow::max, gen)) {
+				if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::regularSnow::min, Utils::BiomeBlockConstraints::mountain::snow::regularSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::snow, "\n"));
+				}
+				else if (Utils::Math::inRange(Utils::BiomeBlockConstraints::mountain::snow::packedSnow::min, Utils::BiomeBlockConstraints::mountain::snow::packedSnow::max, m_biomeMap[abs(x)][abs(y)][abs(z)].at(biomeIndex).second)) {
+					m_blocks[abs(x)][abs(y)][abs(z)].push_back(BlockDataStruct(x, y, z, Blocks::packedSnow, "\n"));
+				}
+			}
+		}
 		std::printf(" %f", gen);
 	}
+
 	for (uint16_t times = 0; times < m_blocks[abs(x)][abs(y)][abs(z)].size(); times++) {
 		if (m_blocks[abs(x)][abs(y)][abs(z)].at(times).x == x && m_blocks[abs(x)][abs(y)][abs(z)].at(times).y == y && m_blocks[abs(x)][abs(y)][abs(z)].at(times).z == z) {
 			std::printf(" %s\n", m_blocks[abs(x)][abs(y)][abs(z)].at(times).block.name.c_str());

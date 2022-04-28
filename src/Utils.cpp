@@ -57,6 +57,48 @@ float Utils::BiomeBlockConstraints::ocean::gravel::max = 0.80f;
 float Utils::BiomeBlockConstraints::ocean::sand::min = 0.80f;
 float Utils::BiomeBlockConstraints::ocean::sand::max = 1.00f;
 
+float Utils::BiomeBlockConstraints::tundra::ice::min = -1.0f;
+float Utils::BiomeBlockConstraints::tundra::ice::max = -0.3f;
+
+float Utils::BiomeBlockConstraints::tundra::ice::normalIce::min = -1.0f;
+float Utils::BiomeBlockConstraints::tundra::ice::normalIce::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::tundra::ice::packedIce::min = 0.00f;
+float Utils::BiomeBlockConstraints::tundra::ice::packedIce::max = 1.00f;
+
+float Utils::BiomeBlockConstraints::tundra::snow::min = -0.3f;
+float Utils::BiomeBlockConstraints::tundra::snow::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::tundra::snow::normalSnow::min = -1.0f;
+float Utils::BiomeBlockConstraints::tundra::snow::normalSnow::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::tundra::snow::packedSnow::min = 0.00f;
+float Utils::BiomeBlockConstraints::tundra::snow::packedSnow::max = 1.00f;
+
+float Utils::BiomeBlockConstraints::tundra::snowyGrass::min = 0.00f;
+float Utils::BiomeBlockConstraints::tundra::snowyGrass::max = 1.00f;
+
+float Utils::BiomeBlockConstraints::mountain::normal::min = -1.0f;
+float Utils::BiomeBlockConstraints::mountain::normal::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::mountain::normal::rocks::min = -1.0f;
+float Utils::BiomeBlockConstraints::mountain::normal::rocks::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::mountain::normal::gravel::min = 0.00f;
+float Utils::BiomeBlockConstraints::mountain::normal::gravel::max = 1.00f;
+
+float Utils::BiomeBlockConstraints::mountain::snowyGrass::min = 0.00f;
+float Utils::BiomeBlockConstraints::mountain::snowyGrass::max = 0.50f;
+
+float Utils::BiomeBlockConstraints::mountain::snow::min = 0.50f;
+float Utils::BiomeBlockConstraints::mountain::snow::max = 1.00f;
+
+float Utils::BiomeBlockConstraints::mountain::snow::regularSnow::min = -1.0f;
+float Utils::BiomeBlockConstraints::mountain::snow::regularSnow::max = 0.00f;
+
+float Utils::BiomeBlockConstraints::mountain::snow::packedSnow::min = 0.00f;
+float Utils::BiomeBlockConstraints::mountain::snow::packedSnow::max = 1.00f;
+
 bool Utils::Math::inRange(float min, float max, float val) {
 	if (val > max || val < min) {
 		return false;
