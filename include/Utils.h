@@ -36,6 +36,54 @@ public:
 				static float min;
 			};
 		};
+		struct jungle {
+			struct water {
+				static float max;
+				static float min;
+			};
+			struct grass {
+				static float max;
+				static float min;
+			};
+			struct sand {
+				static float max;
+				static float min;
+			};
+			static uint16_t treeDisplacement;
+			static uint16_t treeFrequency;
+		};
+		struct plains {
+			struct grass {
+				static float min;
+				static float max;
+			};
+			struct water {
+				static float min;
+				static float max;
+			};
+			struct sand {
+				static float min;
+				static float max;
+			};
+			struct gravel {
+				static float min;
+				static float max;
+			};
+		};
+		struct ocean {
+			struct water {
+				static float min;
+				static float max;
+			};
+			struct gravel {
+				static float min;
+				static float max;
+			};
+			struct sand {
+				static float min;
+				static float max;
+			};
+		};
 	};
 	struct Math {
 		static bool inRange(float min, float max, float val);
