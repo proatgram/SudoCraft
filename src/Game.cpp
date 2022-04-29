@@ -13,6 +13,7 @@
 #include "SafeData.hpp"
 #include "GameUI.h"
 #include "World.h"
+#include "Utils.h"
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)
@@ -63,12 +64,12 @@ int main() {
 	printCharacterInfo(Azdelth);
 	World world(17, 17, 17, 11231212, 12342341, 4321234);
 	//world.getBlock(12, 12, 12);
-	
-	
-	for (int x = 0; x < 1000; x++) {
-		for (int y = 0; y < 1000; y++) {
-			for (int z = 0; z < 1000; z++) {
-				world.getBlock(x, y, z);
+
+	for (int x = 0; x < 100; x++) {
+		for (int y = 0; y < 100; y++) {
+			for (int z = 0; z < 100; z++) {
+				std::printf("%s %d, %d, %d\n", world.getBlock(x, y, z).block.name.c_str(), x, y, z);
+
 			}
 		}
 	}
