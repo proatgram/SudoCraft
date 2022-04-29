@@ -107,3 +107,15 @@ bool Utils::Math::inRange(float min, float max, float val) {
 		return true;
 	}
 }
+
+double Utils::Math::Map::Double(double x, double in_min, double in_max, double out_min, double out_max) {
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+float Utils::Math::Map::Float(float x, float in_min, float in_max, float out_min, float out_max) {
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+int Utils::Math::Map::Int(int x, int in_min, int in_max, int out_min, int out_max) {
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
