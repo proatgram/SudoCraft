@@ -17,6 +17,10 @@ struct BlockDataStruct {
 	signed long int z;
 	BlockInfo block;
 	std::string nbtData;
+
+	void nbtAppend(std::string nbtData);
+
+	void nbtSet(std::string nbtData);
 };
 struct Blocks {
 		static BlockInfo grass;
@@ -27,6 +31,10 @@ struct Blocks {
 		static BlockInfo snow;
 		static BlockInfo snowyGrass;
 		static BlockInfo water;
+		static BlockInfo packedSnow;
+		static BlockInfo ice;
+		static BlockInfo packedIce;
+		static BlockInfo rock;
 };
 
 
