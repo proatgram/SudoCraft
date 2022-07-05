@@ -1,7 +1,9 @@
 #include <cstdio>
 #include <cstdint>
+#include <ostream>
 #include <string>
 #include <algorithm>
+#include <iostream>
 
 #include "Item.h"
 #include "Tool.h"
@@ -14,6 +16,8 @@
 #include "GameUI.h"
 #include "World.h"
 #include "Utils.h"
+#include "SaveIO.h"
+
 
 // This method prints the weapon info.
 void printWeaponInfo(const Weapon& weapon)
@@ -62,16 +66,13 @@ int main() {
 	Azdelth.inventory->addItem(weapon);
 	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
-	World world(17, 17, 17, 11231212, 12342341, 4321234);
-	//world.getBlock(12, 12, 12);
-
-	for (int x = 0; x < 100; x++) {
-		for (int y = 0; y < 100; y++) {
-			for (int z = 0; z < 100; z++) {
-				std::printf("%s %d, %d, %d\n", world.getBlock(x, y, z).block.name.c_str(), x, y, z);
-
-			}
-		}
-	}
-
+    SaveIO::Buffer bf;
+    SaveIO::readSet(&bf, 0, "/home/thetimbrick/Documents/Text.txt");
+    bf.seekg(0, std::ios::end);
+    int end = bf.tellg();
+    bf.seekg(0, std::ios::beg);
+    for (unsigned int times = 0; times < end; times++) {
+        std::printf("%c", bf.get());
+        
+    }
 }

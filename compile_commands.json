@@ -1,0 +1,247 @@
+[
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/BinaryBuffer.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/BinaryBuffer.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/BinaryBuffer.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Blocks.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Blocks.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Blocks.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Character.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Character.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Character.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Craft.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Craft.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Craft.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Game.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Game.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Game.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/GameUI.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/GameUI.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/GameUI.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Inventory.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Inventory.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Inventory.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Item.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Item.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Item.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/SaveIO.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/SaveIO.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/SaveIO.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Tool.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Tool.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Tool.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Utils.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Utils.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Utils.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/Weapon.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/Weapon.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/Weapon.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/World.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/World.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/World.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/include -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include  -g   -std=c++17 -g -o CMakeFiles/sudocraft.dir/src/WorldGen.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/src/WorldGen.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/src/WorldGen.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/scalebias.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/scalebias.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/scalebias.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/translatepoint.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/translatepoint.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/translatepoint.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/select.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/select.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/select.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/invert.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/invert.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/invert.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/curve.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/curve.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/curve.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/modulebase.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/modulebase.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/modulebase.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/blend.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/blend.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/blend.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/displace.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/displace.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/displace.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/terrace.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/terrace.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/terrace.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/max.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/max.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/max.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/scalepoint.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/scalepoint.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/scalepoint.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/voronoi.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/voronoi.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/voronoi.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/checkerboard.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/checkerboard.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/checkerboard.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/turbulence.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/turbulence.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/turbulence.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/cylinders.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/cylinders.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/cylinders.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/multiply.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/multiply.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/multiply.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/abs.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/abs.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/abs.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/power.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/power.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/power.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/cache.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/cache.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/cache.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/billow.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/billow.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/billow.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/spheres.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/spheres.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/spheres.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/rotatepoint.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/rotatepoint.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/rotatepoint.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/clamp.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/clamp.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/clamp.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/exponent.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/exponent.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/exponent.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/perlin.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/perlin.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/perlin.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/add.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/add.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/add.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/min.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/min.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/min.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/ridgedmulti.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/ridgedmulti.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/ridgedmulti.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/module/const.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/const.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/module/const.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/latlon.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/latlon.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/latlon.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/model/line.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/line.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/line.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/model/cylinder.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/cylinder.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/cylinder.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/model/sphere.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/sphere.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/sphere.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/model/plane.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/plane.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/model/plane.cpp"
+},
+{
+  "directory": "/home/thetimbrick/Documents/repos/SudoCraft/build/deps/libnoise",
+  "command": "/usr/bin/c++   -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/module -I/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/include/noise/model  -g   -o CMakeFiles/libnoise.dir/src/noisegen.cpp.o -c /home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/noisegen.cpp",
+  "file": "/home/thetimbrick/Documents/repos/SudoCraft/deps/libnoise/src/noisegen.cpp"
+}
+]
