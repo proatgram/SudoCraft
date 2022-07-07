@@ -15,6 +15,10 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include <utility>
+#include <cstring>
+#include <algorithm>
+
 
 class SaveIO {
 	public:
@@ -51,10 +55,14 @@ class SaveIO {
 		static int readFile(SaveIO::Buffer* buffer, std::filesystem::path path);
 
 		static SaveIO::Buffer* readFile(std::filesystem::path path);
-
+        
 		static int readSet(SaveIO::Buffer* buffer, unsigned int setNumber, std::filesystem::path path);
 
-		//static SaveIO::Buffer* readSet(unsigned int setNumber, std::filesystem::path path);
+        static std::pair<unsigned char, double> readHeader(SaveIO::Buffer* buffer);
+
+        static std::pair<unsigned char, double> readHeader(std::filesystem::path path);
+
+		static SaveIO::Buffer* readSet(unsigned int setNumber, std::filesystem::path path);
 	private:
 
 

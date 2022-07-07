@@ -4,6 +4,8 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
+
 
 #include "Item.h"
 #include "Tool.h"
@@ -67,12 +69,6 @@ int main() {
 	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
     SaveIO::Buffer bf;
-    SaveIO::readSet(&bf, 0, "/home/thetimbrick/Documents/Text.txt");
-    bf.seekg(0, std::ios::end);
-    int end = bf.tellg();
-    bf.seekg(0, std::ios::beg);
-    for (unsigned int times = 0; times < end; times++) {
-        std::printf("%c", bf.get());
-        
-    }
+    SaveIO::readSet(&bf, 0, "/home/thetimbrick/Documents/testsave.dat");
+    std::printf("%s\n", bf.str().c_str());
 }

@@ -45,56 +45,82 @@ SaveIO::Buffer* SaveIO::readFile(std::filesystem::path path) {
 	std::fstream fileBuff(std::filesystem::absolute(path).string(), std::fstream::in | std::fstream::out | std::fstream::binary);
 	if (!fileBuff) {
 		return nullptr;
-	}
-
-	*file << fileBuff.rdbuf();
+	} 
+	fileBuff.seekg(0, std::fstream::end);
+    int size = fileBuff.tellg();
+    fileBuff.seekg(0, std::fstream::beg);
+    char* tempBuff = new char[size];
+    fileBuff.read(tempBuff, size);
+    file->write(tempBuff, size);
+    file->seekg(0);
+    fileBuff.close();
+    delete[] tempBuff;
 	return file;
 }
 
 int SaveIO::readSet(SaveIO::Buffer* buffer, unsigned int setNumber, std::filesystem::path path) {
-	std::fstream fileBuff(std::filesystem::absolute(path).string(), std::fstream::in | std::fstream::out | std::fstream::binary);
-	if (!fileBuff) {
-		std::printf("fail");
-		return SaveIO::FAIL;
-	}
-	unsigned int pos = 0;
-	fileBuff.seekg(std::fstream::end);
-	unsigned int end = fileBuff.tellg();
-	fileBuff.seekg(std::fstream::beg);
-	if (fileBuff.get() != SaveIO::Sections::HEADER) {
-		return SaveIO::FAIL;
-	}
-	fileBuff.seekg(2, std::fstream::cur);
-	union bytes {
-		unsigned char byte[8];
-		double doub;
-		uint32_t uin32;
-	}myb;
-	for (unsigned int times = 0; times < 8; times++) {
-		myb.byte[times] = fileBuff.get();
-	}
-	while (pos != setNumber) {
-		if (fileBuff.get() != SaveIO::Sections::NSET) {
-			return SaveIO::FAIL;
-		}
-
-		for (unsigned int times = 0; times < 4; times++) {
-			myb.byte[times] = fileBuff.get();
-		}
-		fileBuff.seekg(myb.uin32, std::fstream::cur);
-		pos++;
-
-	}
-	if (fileBuff.get() != SaveIO::Sections::NSET) {
-		return SaveIO::FAIL;
-	}
-	for (unsigned int times = 0; times < 4; times++) {
-		myb.byte[times] = fileBuff.get();
-	}
-	for (unsigned int times = 0; times < myb.uin32; times++) {
-		*buffer << (char)fileBuff.get();
-	}
-
-	fileBuff.close();
-	return SaveIO::SUCCESS;
+    SaveIO::Buffer* buff = SaveIO::readFile(path);
+    uint8_t* tempBuff = new uint8_t[std::numeric_limits<uint16_t>::max()];
+    buff->seekg(13);
+    unsigned int currentSet = 0;
+    unsigned int setSize = 0;    
+    while (currentSet < setNumber) {
+        if (buff->get() != SaveIO::Sections::NSET) {
+            std::printf("Flahsdkaail.\n");
+            return SaveIO::FAIL;
+        }
+        buff->get((char*)tempBuff, 4);
+        std::copy(tempBuff, &tempBuff[3], &setSize);
+        buff->seekg(setSize + 1, SaveIO::Buffer::cur);
+        currentSet++;
+    }
+    if (buff->get() != SaveIO::Sections::NSET) {
+        std::printf("Fail.\n");
+        return SaveIO::FAIL;
+    } 
+    buff->get((char*)tempBuff, 4);
+    std::copy(tempBuff, &tempBuff[3], &setSize);
+    buff->seekg(1, std::ios::cur);
+    for (unsigned int i = 0; i < setSize; i++) {
+        tempBuff[i] = buff->get();
+    }
+    buffer->write((char*)tempBuff, setSize);
+    buffer->seekg(0, std::ios::end);
+    delete buff;
+    delete[] tempBuff;
+    return SaveIO::SUCCESS;
+}
+ 
+SaveIO::Buffer* SaveIO::readSet(unsigned int setNumber, std::filesystem::path path) {
+    SaveIO::Buffer* buffer = new SaveIO::Buffer;
+    SaveIO::Buffer* buff = SaveIO::readFile(path);
+    uint8_t* tempBuff = new uint8_t[std::numeric_limits<uint16_t>::max()];
+    buff->seekg(13);
+    unsigned int currentSet = 0;
+    unsigned int setSize = 0;    
+    while (currentSet < setNumber) {
+        if (buff->get() != SaveIO::Sections::NSET) {
+            std::printf("Flahsdkaail.\n");
+            return nullptr;
+        }
+        buff->get((char*)tempBuff, 4);
+        std::copy(tempBuff, &tempBuff[3], &setSize);
+        buff->seekg(setSize + 1, SaveIO::Buffer::cur);
+        currentSet++;
+    }
+    if (buff->get() != SaveIO::Sections::NSET) {
+        std::printf("Fail.\n");
+        return nullptr;
+    } 
+    buff->get((char*)tempBuff, 4);
+    std::copy(tempBuff, &tempBuff[3], &setSize);
+    buff->seekg(1, std::ios::cur);
+    for (unsigned int i = 0; i < setSize; i++) {
+        tempBuff[i] = buff->get();
+    }
+    buffer->write((char*)tempBuff, setSize);
+    buffer->seekg(0, std::ios::end);
+    delete buff;
+    delete[] tempBuff;
+    return buffer;
 }
