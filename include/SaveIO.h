@@ -58,13 +58,12 @@ class SaveIO {
         
 		static int readSet(SaveIO::Buffer* buffer, unsigned int setNumber, std::filesystem::path path);
 
-        static std::pair<unsigned char, double> readHeader(SaveIO::Buffer* buffer);
+        static int readHeader(SaveIO::Buffer* buffer, std::pair<unsigned char, double>& pair);
 
-        static std::pair<unsigned char, double> readHeader(std::filesystem::path path);
+        static int readHeader(std::filesystem::path path, std::pair<unsigned char, double>& pair);
 
 		static SaveIO::Buffer* readSet(unsigned int setNumber, std::filesystem::path path);
 	private:
-
 
 };
 

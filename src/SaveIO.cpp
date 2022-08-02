@@ -44,6 +44,8 @@ SaveIO::Buffer* SaveIO::readFile(std::filesystem::path path) {
 	SaveIO::Buffer* file = new SaveIO::Buffer();
 	std::fstream fileBuff(std::filesystem::absolute(path).string(), std::fstream::in | std::fstream::out | std::fstream::binary);
 	if (!fileBuff) {
+        fileBuff.close();
+        delete file;
 		return nullptr;
 	} 
 	fileBuff.seekg(0, std::fstream::end);
@@ -66,6 +68,8 @@ int SaveIO::readSet(SaveIO::Buffer* buffer, unsigned int setNumber, std::filesys
     unsigned int setSize = 0;    
     while (currentSet < setNumber) {
         if (buff->get() != SaveIO::Sections::NSET) {
+            delete buff;
+            delete[] tempBuff;
             std::printf("Flahsdkaail.\n");
             return SaveIO::FAIL;
         }
@@ -75,6 +79,8 @@ int SaveIO::readSet(SaveIO::Buffer* buffer, unsigned int setNumber, std::filesys
         currentSet++;
     }
     if (buff->get() != SaveIO::Sections::NSET) {
+        delete[] tempBuff;
+        delete buff;
         std::printf("Fail.\n");
         return SaveIO::FAIL;
     } 
@@ -100,6 +106,8 @@ SaveIO::Buffer* SaveIO::readSet(unsigned int setNumber, std::filesystem::path pa
     unsigned int setSize = 0;    
     while (currentSet < setNumber) {
         if (buff->get() != SaveIO::Sections::NSET) {
+            delete[] tempBuff;
+            delete buff;
             std::printf("Flahsdkaail.\n");
             return nullptr;
         }
@@ -123,4 +131,47 @@ SaveIO::Buffer* SaveIO::readSet(unsigned int setNumber, std::filesystem::path pa
     delete buff;
     delete[] tempBuff;
     return buffer;
+}
+
+
+int SaveIO::readHeader(SaveIO::Buffer* buffer, std::pair<unsigned char, double>& pair) {
+    int curPos = buffer->tellg();
+    buffer->seekg(0, std::ios::beg);
+    if (buffer->get() != SaveIO::Sections::HEADER) {
+        return SaveIO::FAIL; 
+    }
+    char* tempBuff = new char[std::numeric_limits<uint8_t>::max()];
+    int headerSize = 0; 
+    buffer->get(tempBuff, 4);
+    std::copy(tempBuff, &tempBuff[3], &headerSize);
+    pair.first = buffer->get();
+    for (unsigned int i; i < headerSize; i++) {
+        tempBuff[i] = buffer->get();
+    }
+    double* ver = reinterpret_cast<double*>(&tempBuff[1]);
+    pair.second = *ver;
+    delete[] tempBuff;
+    return SaveIO::SUCCESS;
+}
+
+int SaveIO::readHeader(std::filesystem::path path, std::pair<unsigned char, double>& pair) {
+    SaveIO::Buffer* buffer = SaveIO::readFile(path);
+    int curPos = buffer->tellg();
+    buffer->seekg(0, std::ios::beg);
+    if (buffer->get() != SaveIO::Sections::HEADER) {
+        return SaveIO::FAIL; 
+    }
+    char* tempBuff = new char[std::numeric_limits<uint8_t>::max()];
+    int headerSize = 0; 
+    buffer->get(tempBuff, 4);
+    std::copy(tempBuff, &tempBuff[3], &headerSize);
+    pair.first = buffer->get();
+    for (unsigned int i; i < headerSize; i++) {
+        tempBuff[i] = buffer->get();
+    }
+    double* ver = reinterpret_cast<double*>(&tempBuff[1]);
+    pair.second = *ver;
+    delete[] tempBuff;
+    delete buffer;
+    return SaveIO::SUCCESS;
 }

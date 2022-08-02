@@ -68,7 +68,8 @@ int main() {
 	Azdelth.inventory->addItem(weapon);
 	printf("Crafted Item:\n Name: %s\n ID Number: %d\n Damage: %d\n Range: %d\n", Azdelth.inventory->getItem(0x04)->getName().c_str(), Azdelth.inventory->getItem(0x04)->getId(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getDamage(), reinterpret_cast<Weapon*>(Azdelth.inventory->getItem(0x04))->getRange());
 	printCharacterInfo(Azdelth);
-    SaveIO::Buffer bf;
-    SaveIO::readSet(&bf, 0, "/home/thetimbrick/Documents/testsave.dat");
-    std::printf("%s\n", bf.str().c_str());
+    SaveIO::Buffer* buff = SaveIO::readFile("/home/thetimbrick/Documents/testsave.dat");
+    std::pair<unsigned char, double> v;
+    SaveIO::readHeader(buff, v);
+    std::printf("File Type: 0x%02x\nSave Version: %f\n", v.first, v.second); 
 }
